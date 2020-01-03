@@ -1,3 +1,30 @@
+/**
+ * FILENAME : App.js
+ * DESCRIPTION : Project init js
+ * CREATE DATE : 2020-01-03
+ * CREATOR : YUN SANGHO
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ */
+
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 

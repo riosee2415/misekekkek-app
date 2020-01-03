@@ -1,0 +1,26 @@
+/**
+ * FILENAME : firebase.js
+ * DESCRIPTION : Connect firebase Database resource
+ * CREATE DATE : 2020-01-03
+ * CREATOR : YUN SANGHO
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ */

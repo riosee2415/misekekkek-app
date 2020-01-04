@@ -27,13 +27,17 @@
 
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { getPlatform } from "./src/middleware/middleware";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>TEMP SCREEN</Text>
-    </View>
-  );
+class App extends React.Component {
+  render() {
+    console.log(getPlatform());
+    return (
+      <View style={styles.container}>
+        <Text>TEMP SCREEN</Text>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -44,3 +48,5 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }
 });
+
+export default App;

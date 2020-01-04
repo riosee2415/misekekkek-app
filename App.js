@@ -4,9 +4,9 @@
  * CREATE DATE : 2020-01-03
  * CREATOR : YUN SANGHO
  *
- * UPDATE DATE :
- * UPDATOR :
- * UPDATE DESCRIPTION :
+ * UPDATE DATE : 2020-01-05
+ * UPDATOR : KIM KYOUNGMIN
+ * UPDATE DESCRIPTION : Tab-Navigation can enter setting screen
  *
  * UPDATE DATE :
  * UPDATOR :
@@ -29,14 +29,12 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { getPlatform } from "./src/middleware/middleware";
 
+import MainNavigation from "./src/navigation/Navigation";
+
 class App extends React.Component {
   render() {
     console.log(getPlatform());
-    return (
-      <View style={styles.container}>
-        <Text>TEMP SCREEN</Text>
-      </View>
-    );
+    return <MainNavigation />;
   }
 }
 

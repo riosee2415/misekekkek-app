@@ -2,18 +2,18 @@
 
 ## InitScreen
 
-- [ ] InitPresenter
-- [ ] InitContainer
+- [x] InitPresenter
+- [x] InitContainer
 - [ ] ConnectRedux
 
 ## MainScreen
 
-- [ ] MainPresenter
-- [ ] MainContainer
+- [x] MainPresenter
+- [x] MainContainer
 - [ ] ConnectRedux
 
 ## SettingScreen
 
-- [ ] SettingPresenter
-- [ ] SettingContainer
+- [x] SettingPresenter
+- [x] SettingContainer
 - [ ] ConnectRedux

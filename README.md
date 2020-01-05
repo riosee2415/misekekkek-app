@@ -37,6 +37,23 @@ fine dust information app. used react-native | firebase
         );
     ```
 
+## WORK-LIST
+
+- [x] Git Repository Interwork.
+- [ ] Firebase Connnection.
+- [x] Navigator Settings.
+- [ ] GET Weather API Meterials.
+- [ ] GET Fine Dust API Meterials.
+- [ ] Create Logo.
+- [ ] Init Screen Front.
+- [ ] Main Screen Front.
+- [ ] Settings Screen Front.
+- [ ] Create Redux.
+- [ ] Connect Reducer.
+- [ ] KaKaoTalk Interwork.
+- [ ] Device Permmision for Push Alarm When User Want Time.
+- [ ] Deploy App.
+
 ## COOPERATOR
 
 - riosee2415

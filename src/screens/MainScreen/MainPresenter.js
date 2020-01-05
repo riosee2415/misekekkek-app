@@ -10,7 +10,7 @@ const Main = ({ navigation }) => {
     <View style={styles.container}>
       <Text>Main Screen</Text>
       <TouchableOpacity
-        onPressOut={() => navigation.navigate({ routeName: "Detail" })}
+        onPressOut={() => navigation.navigate({ routeName: "Settings" })}
       >
         <Text>Go Setting</Text>
       </TouchableOpacity>

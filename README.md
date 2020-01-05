@@ -12,6 +12,9 @@ fine dust information app. used react-native | firebase
 ## PACKAGE
 
 - Navigation
+
+  Try Install Package.
+
    <pre>
       npm install react-navigation
       npm install react-navigation-tabs
@@ -22,6 +25,17 @@ fine dust information app. used react-native | firebase
       npm install @react-native-safe-area-context
       npm install @react-native-community/masked-view
   </pre>
+
+  - How to move ? -> Setting Screen that is name "Settings"
+
+    ```js
+    const Main = ({ navigation }) => {
+        return (
+                <TouchableOpacity onPressOut={() => navigation.navigate({ routeName: "Settings" })} >
+                    <Text>Go Setting</Text>
+                </TouchableOpacity
+        );
+    ```
 
 ## COOPERATOR
 

@@ -10,7 +10,7 @@ import { createAppContainer } from "react-navigation";
 const MainNavigation = createStackNavigator(
   {
     Tabs: { screen: Main, navigationOptions: { headerShown: false } },
-    Detail: { screen: Setting }
+    Settings: { screen: Setting }
   },
   {
     headerMode: "screen",

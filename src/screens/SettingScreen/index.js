@@ -4,4 +4,4 @@
 
 import Setting from "./SettingContainer";
 
-export default SettingContainer;
+export default Setting;

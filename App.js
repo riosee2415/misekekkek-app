@@ -28,7 +28,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { getPlatform } from "./src/middleware/middleware";
-
 import MainNavigation from "./src/navigation/Navigation";
 
 class App extends React.Component {

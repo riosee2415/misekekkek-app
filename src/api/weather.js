@@ -18,6 +18,13 @@ const params = {
   units: "metric"
 };
 
+/**
+ * FUNC NAME : getLocation
+ * DESCRIPTION : get Current Location Coordinate.
+ * CREATEOR : NOH JAEMIN
+ * TEST : COMPLATE
+ * RETURN : Object (lat, lon)
+ */
 const getLocation = async () => {
   try {
     await Location.requestPermissionsAsync();
@@ -31,6 +38,18 @@ const getLocation = async () => {
 };
 
 export const weather = {
+  /**
+   * FUNC NAME : getCurrentWeatherByLocation
+   * DESCRIPTION : get Current Weather by Location.
+   * CREATEOR : NOH JAEMIN
+   * TEST : COMPLATE
+   * API PARAMS
+   * - lat : 위도
+   * - lon : 경도
+   * - APPID : 인증키
+   * - units : imperial(화씨온도 사용), metric(섭씨온도 사용)
+   * RETURN : Object (weather data)
+   */
   getCurrentWeatherByLocation: async () => {
     const coords = await getLocation();
 

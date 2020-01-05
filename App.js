@@ -1,12 +1,40 @@
+/**
+ * FILENAME : App.js
+ * DESCRIPTION : Project init js
+ * CREATE DATE : 2020-01-03
+ * CREATOR : YUN SANGHO
+ *
+ * UPDATE DATE : 2020-01-05
+ * UPDATOR : KIM KYOUNGMIN
+ * UPDATE DESCRIPTION : Tab-Navigation can enter setting screen
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ */
+
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { getPlatform } from "./src/middleware/middleware";
+import MainNavigation from "./src/navigation/Navigation";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>TEMP SCREEN</Text>
-    </View>
-  );
+class App extends React.Component {
+  render() {
+    console.log(getPlatform());
+    return <MainNavigation />;
+  }
 }
 
 const styles = StyleSheet.create({
@@ -17,3 +45,5 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }
 });
+
+export default App;

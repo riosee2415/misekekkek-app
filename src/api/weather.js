@@ -1,3 +1,14 @@
+/**
+ * FILENAME : weather.js
+ * DESCRIPTION : Weather Open API using functions's Area
+ * CREATE DATE : 2020-01-05
+ * CREATOR : NOH JAEMIN
+ *
+ * UPDATE DATE :
+ * UPDATOR :
+ * UPDATE DESCRIPTION :
+ */
+
 import axios from "axios";
 import * as Location from "expo-location";
 

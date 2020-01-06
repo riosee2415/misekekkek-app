@@ -15,28 +15,33 @@ fine dust information app. used react-native | firebase
 
   Try Install Package.
 
-   <pre>
-      npm install react-navigation
-      npm install react-navigation-tabs
-      npm install react-native-gesture-handler
-      npm install react-native-reanimated
-      npm install react-native-screens
-      npm install react-navigation-stack
-      npm install @react-native-safe-area-context
-      npm install @react-native-community/masked-view
-      npm install expo-linear-gradient
-  </pre>
+    <pre>
+        npm install react-navigation
+        npm install react-navigation-tabs
+        npm install react-native-gesture-handler
+        npm install react-native-reanimated
+        npm install react-native-screens
+        npm install react-navigation-stack
+        npm install @react-native-safe-area-context
+        npm install @react-native-community/masked-view
+    </pre>
 
-  - How to move ? -> Setting Screen that is name "Settings"
+- Screen View
 
-    ```js
-    const Main = ({ navigation }) => {
-        return (
-                <TouchableOpacity onPressOut={() => navigation.navigate({ routeName: "Settings" })} >
-                    <Text>Go Setting</Text>
-                </TouchableOpacity
-        );
-    ```
+    <pre>
+        npm install expo-linear-gradient
+    </pre>
+
+* How to move ? -> Setting Screen that is name "Settings"
+
+  ```js
+  const Main = ({ navigation }) => {
+      return (
+              <TouchableOpacity onPressOut={() => navigation.navigate({ routeName: "Settings" })} >
+                  <Text>Go Setting</Text>
+              </TouchableOpacity
+      );
+  ```
 
 ## WORK-LIST
 

@@ -24,6 +24,7 @@ fine dust information app. used react-native | firebase
       npm install react-navigation-stack
       npm install @react-native-safe-area-context
       npm install @react-native-community/masked-view
+      npm install expo-linear-gradient
   </pre>
 
   - How to move ? -> Setting Screen that is name "Settings"

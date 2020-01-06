@@ -4,17 +4,18 @@
 
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 const Main = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <LinearGradient colors={["#246db6", "#ffffff"]} style={styles.container}>
       <Text>Main Screen</Text>
       <TouchableOpacity
         onPressOut={() => navigation.navigate({ routeName: "Settings" })}
       >
         <Text>Go Setting</Text>
       </TouchableOpacity>
-    </View>
+    </LinearGradient>
   );
 };
 

@@ -12,3 +12,10 @@ web-report/
 
 # macOS
 .DS_Store
+
+
+# error
+.yarn-error.log
+
+# dotenv Secure Coding
+.env

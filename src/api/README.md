@@ -111,3 +111,9 @@
   pm10Grade1h - 미세먼지(PM10) 1시간 등급 / Number
   pm25Grade1h - 미세먼지(PM2.5) 1시간 등급 / Number
   </pre>
+
+# GEOCODING DOCS
+
+<pre>
+  https://developers.kakao.com/docs/restapi/local
+</pre>

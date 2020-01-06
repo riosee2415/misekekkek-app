@@ -16,12 +16,12 @@
 
 - Call
 
-  <pre>
+  ```js
   import { weather } from "{path}/api/weather";
   async () => {
-      await weather.getCurrentWeatherByLocation();
-  }
-  </pre>
+    await weather.getCurrentWeatherByLocation();
+  };
+  ```
 
 - Parameters
 
@@ -73,13 +73,13 @@
 
 - Call
 
-  <pre>
+  ```js
   import { fineDust } from "{path}/api/fineDust";
   async () => {
-    await fineDust.getNearbyFineDust(); 
-    await fineDust.getNearbyFineDust("3month"); 
-  }
-  </pre>
+    await fineDust.getNearbyFineDust();
+    await fineDust.getNearbyFineDust("3month");
+  };
+  ```
 
 - Parameters
 

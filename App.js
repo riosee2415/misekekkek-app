@@ -32,7 +32,7 @@ import MainNavigation from "./src/navigation/Navigation";
 
 class App extends React.Component {
   render() {
-    console.log(getPlatform());
+    console.log(`Current Platform :`, getPlatform());
     return <MainNavigation />;
   }
 }

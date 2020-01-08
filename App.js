@@ -29,9 +29,14 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { getPlatform } from "./src/middleware/middleware";
 import MainNavigation from "./src/navigation/Navigation";
-import { getCurrentLocation } from "./src/api/locate";
+import { weather } from "./src/api/weather";
 
 class App extends React.Component {
+  componentDidMount = () => {
+    const { data } = weather.getCurrentWeatherByLocation();
+    console.log(data);
+  };
+
   render() {
     console.log(`Current Platform :`, getPlatform());
     return <MainNavigation />;

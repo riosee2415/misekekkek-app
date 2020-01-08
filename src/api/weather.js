@@ -56,6 +56,7 @@ export const weather = {
     const { data } = await axios.get(
       `${params.baseURL}weather?lat=${coords.latitude}&lon=${coords.longitude}&APPID=${params.api_key}&units=${params.units}`
     );
+
     return data;
   }
 };

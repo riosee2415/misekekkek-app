@@ -71,7 +71,7 @@
 
   <pre>You can get the nearby fine dust data by dataTerm</pre>
 
-- Call
+- Usage
 
   ```js
   import { fineDust } from "{path}/api/fineDust";

@@ -128,6 +128,11 @@
 ### USAGE
 
 ```js
+import { geoAddress } from "{whatever}/api/kakaoApi";
+import { getLocation } from "{whatever}/api/weather";
+```
+
+```js
 componentDidMount = async () => {
     const coords = await getLocation();
 

@@ -118,7 +118,12 @@
   https://developers.kakao.com/docs/restapi/local
 </pre>
 
-## KAKAO REST API
+## KAKAO REST API - geoAddress
+
+<pre>
+  좌표값(경도, 위도)를 사용하여 주소를 얻어온다.
+  - 좌표값에 따라 도로명주소는 null값일 수 있다.
+</pre>
 
 ### USAGE
 
@@ -148,3 +153,15 @@ componentDidMount = async () => {
 | ---- | ---- | -------- | -------------------------- |
 | log  | DATA | required | 좌표값 중 경도를 입력한다. |
 | lat  | DATA | required | 좌표값 중 위도를 입력한다. |
+
+### RETURN
+
+<pre>
+  address_name - 전체 주소
+  main_address_no - 주소 중 지번
+  region_1depth_name - 주소 중 '시'
+  region_2depth_name - 주소 중 '구'
+  region_3depth_name - 주소 중 '읍/면/동'
+</pre>
+
+- '구'가 없는 경우 1level씩 depth가 올라간다.

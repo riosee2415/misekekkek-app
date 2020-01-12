@@ -154,10 +154,10 @@ componentDidMount = async () => {
 
 ### PARAMETERS
 
-| NAME | TYPE | REQUIRED | DESCRIPTION                |
-| ---- | ---- | -------- | -------------------------- |
-| log  | DATA | required | 좌표값 중 경도를 입력한다. |
-| lat  | DATA | required | 좌표값 중 위도를 입력한다. |
+| NAME | TYPE | REQUIRED     | DESCRIPTION                |
+| ---- | ---- | ------------ | -------------------------- |
+| log  | DATA | **required** | 좌표값 중 경도를 입력한다. |
+| lat  | DATA | **required** | 좌표값 중 위도를 입력한다. |
 
 ### RETURN
 

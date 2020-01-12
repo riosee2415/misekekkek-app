@@ -25,12 +25,13 @@ const params = {
  * TEST : COMPLATE
  * RETURN : Object (lat, lon)
  */
-const getLocation = async () => {
+export const getLocation = async () => {
   try {
     await Location.requestPermissionsAsync();
     const { coords } = await Location.getCurrentPositionAsync({
       accuracy: Location.Accuracy.BestForNavigations
     });
+
     return coords;
   } catch (error) {
     console.log("failed get location");

@@ -29,14 +29,9 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { getPlatform } from "./src/middleware/middleware";
 import MainNavigation from "./src/navigation/Navigation";
-import { weather } from "./src/api/weather";
+import { geoAddress } from "./src/api/kakaoApi";
 
 class App extends React.Component {
-  componentDidMount = () => {
-    const { data } = weather.getCurrentWeatherByLocation();
-    console.log(data);
-  };
-
   render() {
     console.log(`Current Platform :`, getPlatform());
     return <MainNavigation />;

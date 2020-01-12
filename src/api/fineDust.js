@@ -4,9 +4,10 @@
  * CREATE DATE : 2020-01-05
  * CREATOR : NOH JAEMIN
  *
- * UPDATE DATE :
- * UPDATOR :
- * UPDATE DESCRIPTION :
+ * UPDATE DATE : 2020-01-07
+ * UPDATOR : YUN SANGHO
+ * UPDATE DESCRIPTION : Dust API Data modifed in API
+ *
  */
 
 import axios from "axios";

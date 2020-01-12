@@ -117,3 +117,27 @@
 <pre>
   https://developers.kakao.com/docs/restapi/local
 </pre>
+
+## KAKAO REST API
+
+### USAGE
+
+```js
+componentDidMount = async () => {
+    const coords = await getLocation();
+
+    let geo = null;
+    try {
+      geo = await geoAddress(coords.longitude, coords.latitude);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      this.setState({
+        depth1: geo.region_1depth_name,
+        depth2: geo.region_2depth_name,
+        depth3: geo.region_3depth_name
+      });
+    }
+  };
+}
+```

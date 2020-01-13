@@ -4,17 +4,18 @@
  * CREATE DATE : 2020-01-05
  * CREATOR : NOH JAEMIN
  *
- * UPDATE DATE :
- * UPDATOR :
- * UPDATE DESCRIPTION :
+ * UPDATE DATE : 2020-01-11
+ * UPDATOR : KIM KYOUNGMIN
+ * UPDATE DESCRIPTION : Weather Api-Key Secure Coding
  */
 
 import axios from "axios";
 import * as Location from "expo-location";
+import { W_API_KEY } from "react-native-dotenv";
 
 const params = {
   baseURL: "http://api.openweathermap.org/data/2.5/",
-  api_key: "b1e69cf636fd7783aeddaf8252ace45a",
+  api_key: { W_API_KEY },
   units: "metric"
 };
 

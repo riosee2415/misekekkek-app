@@ -111,3 +111,33 @@
   pm10Grade1h - 미세먼지(PM10) 1시간 등급 / Number
   pm25Grade1h - 미세먼지(PM2.5) 1시간 등급 / Number
   </pre>
+
+# API Key Secure Coding (dotenv)
+
+- npm install @babel/preset-env
+- npm install babel-jest
+- npm install babel-preset-react-native
+- npm install metro-react-native-babel-preset
+- npm install react-native-dotenv
+
+- call (weather api key)
+
+```js
+import { W_API_KEY } from "react-native-dotenv";
+const params = {
+  baseURL: "http://api.openweathermap.org/data/2.5/",
+  api_key: { W_API_KEY },
+  units: "metric"
+};
+```
+
+- call (finedust api key)
+
+```js
+import { F_API_KEY } from "react-native-dotenv";
+const params = {
+  baseURL: "http://openapi.airkorea.or.kr/openapi/services/rest/",
+  api_key: { F_API_KEY },
+  returnType: "json"
+};
+```

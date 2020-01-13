@@ -26,12 +26,13 @@ const params = {
  * TEST : COMPLATE
  * RETURN : Object (lat, lon)
  */
-const getLocation = async () => {
+export const getLocation = async () => {
   try {
     await Location.requestPermissionsAsync();
     const { coords } = await Location.getCurrentPositionAsync({
       accuracy: Location.Accuracy.BestForNavigations
     });
+
     return coords;
   } catch (error) {
     console.log("failed get location");
@@ -57,6 +58,7 @@ export const weather = {
     const { data } = await axios.get(
       `${params.baseURL}weather?lat=${coords.latitude}&lon=${coords.longitude}&APPID=${params.api_key}&units=${params.units}`
     );
+
     return data;
   }
 };

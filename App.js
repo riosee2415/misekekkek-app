@@ -29,6 +29,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { getPlatform } from "./src/middleware/middleware";
 import MainNavigation from "./src/navigation/Navigation";
+import { geoAddress } from "./src/api/kakaoApi";
 
 class App extends React.Component {
   render() {

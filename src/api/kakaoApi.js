@@ -10,6 +10,7 @@
  */
 
 import axios from "axios";
+import { K_REST_API_KEY } from "react-native-dotenv";
 
 const kakaoREST = axios.create({
   baseURL: "https://dapi.kakao.com/"
@@ -34,7 +35,7 @@ export const geoAddress = async (log, lat) => {
         `v2/local/geo/coord2address.json?x=${log}&y=${lat}&input_coord=WGS84`,
         {
           headers: {
-            Authorization: "KakaoAK bef55abba9f33d443bbc243193b737f0"
+            Authorization: `KakaoAK ${K_REST_API_KEY}`
           }
         }
       )

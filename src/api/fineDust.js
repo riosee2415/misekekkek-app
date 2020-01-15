@@ -3,18 +3,24 @@
  * DESCRIPTION : FineDust Open API using functions's Area
  * CREATE DATE : 2020-01-05
  * CREATOR : NOH JAEMIN
+ 
+ * UPDATE DATE : 2020-01-07
+ * UPDATOR : YUN SANGHO
+ * UPDATE DESCRIPTION : Dust API Data modifed in API
  *
- * UPDATE DATE :
- * UPDATOR :
- * UPDATE DESCRIPTION :
+ * UPDATE DATE : 2020-01-11
+ * UPDATOR : KIM KYOUNGMIN
+ * UPDATE DESCRIPTION : Fine Dust Api-Key Secure Coding
+ * 
+ *
  */
 
 import axios from "axios";
+import { F_API_KEY } from "react-native-dotenv";
 
 const params = {
   baseURL: "http://openapi.airkorea.or.kr/openapi/services/rest/",
-  api_key:
-    "rfRV3R6zINGZulW2XMDwP6vDVNWaFHSzsD8ZH2FoR3eaEOxMXd1CIl3PCkc%2FyOmm%2FxPNV8CJTLQQ8HxHXZco7Q%3D%3D",
+  api_key: { F_API_KEY },
   returnType: "json"
 };
 

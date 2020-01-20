@@ -17,6 +17,8 @@
 
 import axios from "axios";
 import { F_API_KEY } from "react-native-dotenv";
+import { geoAddress } from "./kakaoApi";
+import { getLocation } from "./weather";
 
 const params = {
   baseURL: "http://openapi.airkorea.or.kr/openapi/services/rest/",
@@ -32,7 +34,26 @@ const params = {
  * RETURN : String (address)
  */
 const getCurrentAddress = async () => {
-  return await "대전광역시 유성구 지족동";
+  const coords = await getLocation();
+
+  let geo = null;
+  let address = null;
+  try {
+    geo = await geoAddress(coords.longitude, coords.latitude);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    address =
+      geo.region_1depth_name +
+      " " +
+      geo.region_2depth_name +
+      " " +
+      geo.region_3depth_name;
+  }
+  console.log("주소 : " + address);
+  console.log("풀주소 : " + geo.address_name);
+  console.log("지번 : " + geo.main_address_no);
+  return await address;
 };
 
 /**

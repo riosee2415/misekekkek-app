@@ -12,7 +12,13 @@
  * UPDATOR : KIM KYOUNGMIN
  * UPDATE DESCRIPTION : Fine Dust Api-Key Secure Coding
  * 
- *
+ * UPDATE DATE : 2020-01-21
+ * UPDATOR : NOH JAEMIN
+ * UPDATE DESCRIPTION : getCurrentAddress function modify
+ *  
+ * UPDATE DATE : 2020-01-22
+ * UPDATOR : NOH JAEMIN
+ * UPDATE DESCRIPTION : Api-Key Secure Coding Usage modify
  */
 
 import axios from "axios";
@@ -22,13 +28,13 @@ import { getLocation } from "./weather";
 
 const params = {
   baseURL: "http://openapi.airkorea.or.kr/openapi/services/rest/",
-  api_key: { F_API_KEY },
+  api_key: F_API_KEY,
   returnType: "json"
 };
 
 /**
  * FUNC NAME : getCurrentAddress
- * DESCRIPTION : get Current Address by GPS.
+ * DESCRIPTION : get Current Address using Kakao REST API.
  * CREATEOR : NOH JAEMIN
  * TEST : COMPLATE
  * RETURN : String (address)

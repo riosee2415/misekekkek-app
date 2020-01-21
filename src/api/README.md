@@ -14,7 +14,7 @@
 
   <pre>You can get the current weather data by latitude, longitude coordinates of the location</pre>
 
-- Call
+- Usage
 
   ```js
   import { weather } from "{path}/api/weather";
@@ -120,24 +120,24 @@
 - npm install metro-react-native-babel-preset
 - npm install react-native-dotenv
 
-- call (weather api key)
+- Usage (weather api key)
 
 ```js
 import { W_API_KEY } from "react-native-dotenv";
 const params = {
   baseURL: "http://api.openweathermap.org/data/2.5/",
-  api_key: { W_API_KEY },
+  api_key: W_API_KEY,
   units: "metric"
 };
 ```
 
-- call (finedust api key)
+- Usage (fineDust api key)
 
 ```js
 import { F_API_KEY } from "react-native-dotenv";
 const params = {
   baseURL: "http://openapi.airkorea.or.kr/openapi/services/rest/",
-  api_key: { F_API_KEY },
+  api_key: F_API_KEY,
   returnType: "json"
 };
 ```

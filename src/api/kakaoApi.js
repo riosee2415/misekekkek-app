@@ -32,13 +32,8 @@ export const geoAddress = async (log, lat) => {
   try {
     await kakaoREST
       .get(
-<<<<<<< HEAD
-        `v2/local/geo/coord2address.json?x=${log}&y=${lat}&input_coord=WGS84`,
-        
-=======
         `v2/local/geo/coord2regioncode.json?x=${log}&y=${lat}&input_coord=WGS84`,
         {
->>>>>>> 064c44211b15bef40bb76dc4b2d66d9e2ccc0662
           headers: {
             Authorization: `KakaoAK ${K_REST_API_KEY}`
           }

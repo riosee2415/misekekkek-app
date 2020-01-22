@@ -49,16 +49,8 @@ const getCurrentAddress = async () => {
   } catch (error) {
     console.log(error);
   } finally {
-    address =
-      geo.region_1depth_name +
-      " " +
-      geo.region_2depth_name +
-      " " +
-      geo.region_3depth_name;
+    address = geo.address_name;
   }
-  console.log("주소 : " + address);
-  console.log("풀주소 : " + geo.address_name);
-  console.log("지번 : " + geo.main_address_no);
   return await address;
 };
 

@@ -4,9 +4,9 @@
  * CREATE DATE : 2020-01-12
  * CREATOR : YUN SANGHO
  *
- * UPDATE DATE :
- * UPDATOR :
- * UPDATE DESCRIPTION :
+ * UPDATE DATE : 2020-01-22
+ * UPDATOR : NOH JAEMIN
+ * UPDATE DESCRIPTION : geoAddress function kakaoREST API URL changed :: coord2address -> coord2regioncode
  */
 
 import axios from "axios";
@@ -32,7 +32,7 @@ export const geoAddress = async (log, lat) => {
   try {
     await kakaoREST
       .get(
-        `v2/local/geo/coord2address.json?x=${log}&y=${lat}&input_coord=WGS84`,
+        `v2/local/geo/coord2regioncode.json?x=${log}&y=${lat}&input_coord=WGS84`,
         {
           headers: {
             Authorization: `KakaoAK ${K_REST_API_KEY}`
@@ -40,8 +40,8 @@ export const geoAddress = async (log, lat) => {
         }
       )
       .then(res => {
-        // console.log(res.data.documents[0].address);
-        geoData = res.data.documents[0].address;
+        // console.log(res.data.documents[0]);
+        geoData = res.data.documents[0];
       });
   } catch (error) {
     console.log(error);

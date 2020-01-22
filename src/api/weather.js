@@ -7,6 +7,10 @@
  * UPDATE DATE : 2020-01-11
  * UPDATOR : KIM KYOUNGMIN
  * UPDATE DESCRIPTION : Weather Api-Key Secure Coding
+ *
+ * UPDATE DATE : 2020-01-22
+ * UPDATOR : NOH JAEMIN
+ * UPDATE DESCRIPTION : Api-Key Secure Coding Usage modify
  */
 
 import axios from "axios";
@@ -15,7 +19,7 @@ import { W_API_KEY } from "react-native-dotenv";
 
 const params = {
   baseURL: "http://api.openweathermap.org/data/2.5/",
-  api_key: { W_API_KEY },
+  api_key: W_API_KEY,
   units: "metric"
 };
 

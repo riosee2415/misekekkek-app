@@ -64,13 +64,15 @@ import { firestore } from "src/firebase";
 ```
 
 <pre>
-    
+    - collection : "exp_text"
+        -- docs : lv        [matching for finedust level]
+        -- docs : output    [that expression to text weather same level]
 </pre>
 
 ## WORK-LIST
 
 - [x] Git Repository Interwork.
-- [ ] Firebase Connnection.
+- [x] Firebase Connnection.
 - [x] Navigator Settings.
 - [x] GET Weather API Meterials.
 - [x] GET Fine Dust API Meterials.

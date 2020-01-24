@@ -43,6 +43,30 @@ fine dust information app. used react-native | firebase
       );
   ```
 
+## FIREBASE USAGE
+
+```js
+import { firestore } from "src/firebase";
+
+ async () => {
+
+     await firestore
+      .collection( [Collection Name]\)
+      .get()
+      .then(docs => {
+        docs.forEach(doc => {
+          console.log(doc.id);
+          console.log(doc.data().output);
+        });
+      });
+ }
+
+```
+
+<pre>
+    
+</pre>
+
 ## WORK-LIST
 
 - [x] Git Repository Interwork.

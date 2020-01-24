@@ -14,6 +14,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { geoAddress } from "../../api/kakaoApi";
 import { getLocation } from "../../api/weather";
+import { firestore } from "../../firebase";
 
 class Main extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class Main extends React.Component {
       depth3: null
     };
   }
+
   render() {
     const { depth1, depth2, depth3 } = this.state;
     return (
@@ -44,6 +46,18 @@ class Main extends React.Component {
   }
 
   componentDidMount = async () => {
+    console.log("Mount test");
+
+    await firestore
+      .collection("exp_text")
+      .get()
+      .then(docs => {
+        docs.forEach(doc => {
+          console.log(doc.id);
+          console.log(doc.data().output);
+        });
+      });
+
     const coords = await getLocation();
 
     let geo = null;

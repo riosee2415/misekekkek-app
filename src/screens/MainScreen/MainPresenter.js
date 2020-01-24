@@ -10,7 +10,13 @@
  */
 
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  StatusBar
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { geoAddress } from "../../api/kakaoApi";
 import { getLocation } from "../../api/weather";
@@ -23,14 +29,16 @@ class Main extends React.Component {
     this.state = {
       depth1: null,
       depth2: null,
-      depth3: null
+      depth3: null,
+      output: null
     };
   }
 
   render() {
-    const { depth1, depth2, depth3 } = this.state;
+    const { depth1, depth2, depth3, output } = this.state;
     return (
       <LinearGradient colors={["#246db6", "#ffffff"]} style={styles.container}>
+        <StatusBar barStyle={"light-content"} />
         <Text>
           Main Screen{depth1} {depth2} {depth3}
         </Text>
@@ -41,6 +49,7 @@ class Main extends React.Component {
         >
           <Text>Go Setting</Text>
         </TouchableOpacity>
+        <Text>{output}</Text>
       </LinearGradient>
     );
   }
@@ -50,11 +59,16 @@ class Main extends React.Component {
 
     await firestore
       .collection("exp_text")
+      .where("lv", "==", "1")
       .get()
       .then(docs => {
         docs.forEach(doc => {
           console.log(doc.id);
           console.log(doc.data().output);
+
+          this.setState({
+            output: doc.data().output
+          });
         });
       });
 

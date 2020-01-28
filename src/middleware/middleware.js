@@ -39,18 +39,20 @@ const getPlatform = () => {
   return currentOS;
 };
 
+const defaultCallback = error => {
+  if (error) {
+    console.log(error);
+  }
+};
+
 /**
  * FUNC NAME : setItem
  * DESCRIPTION : set AsyncStorage Item.
  * CREATEOR : NOH JAEMIN
  * TEST : COMPLATE
  */
-const setItem = (key, value) => {
-  AsyncStorage.setItem(key, value, error => {
-    if (error) {
-      console.log(error);
-    }
-  });
+const setItem = (key, value, callback) => {
+  AsyncStorage.setItem(key, value, callback ? callback : defaultCallback);
 };
 
 /**
@@ -59,12 +61,11 @@ const setItem = (key, value) => {
  * CREATEOR : NOH JAEMIN
  * TEST : COMPLATE
  */
-const getItem = async key => {
-  const data = await AsyncStorage.getItem(key, (error, result) => {
-    if (error) {
-      console.log(error);
-    }
-  }).then(value => {
+const getItem = async (key, callback) => {
+  const data = await AsyncStorage.getItem(
+    key,
+    callback ? callback : defaultCallback
+  ).then(value => {
     return value;
   });
   return data;
@@ -76,12 +77,8 @@ const getItem = async key => {
  * CREATEOR : NOH JAEMIN
  * TEST : COMPLATE
  */
-const mergeItem = (key, value) => {
-  AsyncStorage.mergeItem(key, value, error => {
-    if (error) {
-      console.log(error);
-    }
-  });
+const mergeItem = (key, value, callback) => {
+  AsyncStorage.mergeItem(key, value, callback ? callback : defaultCallback);
 };
 
 /**
@@ -90,12 +87,8 @@ const mergeItem = (key, value) => {
  * CREATEOR : NOH JAEMIN
  * TEST : COMPLATE
  */
-const removeItem = key => {
-  AsyncStorage.removeItem(key, error => {
-    if (error) {
-      console.log(error);
-    }
-  });
+const removeItem = (key, callback) => {
+  AsyncStorage.removeItem(key, callback ? callback : defaultCallback);
 };
 
 const Storage = {

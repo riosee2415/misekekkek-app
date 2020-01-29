@@ -72,8 +72,8 @@ const getItem = async (key, callback) => {
 };
 
 /**
- * FUNC NAME : modifyItem
- * DESCRIPTION : modify AsyncStorage Item.
+ * FUNC NAME : mergeItem
+ * DESCRIPTION : merge AsyncStorage Item.
  * CREATEOR : NOH JAEMIN
  * TEST : COMPLATE
  */

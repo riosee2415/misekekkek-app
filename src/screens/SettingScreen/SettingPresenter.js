@@ -9,6 +9,9 @@ const Setting = () => {
   return (
     <View style={styles.container}>
       <Text>Setting Screen</Text>
+      <Text>Set time at Push Alerm</Text>
+      <Text>Used to any rule</Text>
+      <Text>Marketing toggle key(on,off)</Text>
     </View>
   );
 };

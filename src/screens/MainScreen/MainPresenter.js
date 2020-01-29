@@ -15,9 +15,12 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  StatusBar
+  StatusBar,
+  Image,
+  ImageBackground
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { AntDesign } from "@expo/vector-icons";
 import { geoAddress } from "../../api/kakaoApi";
 import { getLocation } from "../../api/weather";
 import { firestore } from "../../firebase";
@@ -37,20 +40,28 @@ class Main extends React.Component {
   render() {
     const { depth1, depth2, depth3, output } = this.state;
     return (
-      <LinearGradient colors={["#246db6", "#ffffff"]} style={styles.container}>
-        <StatusBar barStyle={"light-content"} />
+      <ImageBackground
+        source={require("./src/iPhone_Xr/7_Level_iPhone_Xr.jpg")}
+        style={styles.container}
+      >
+        <StatusBar barStyle={"dark-content"} />
+        <Image
+          source={require("./src/pompom/POMPOM_W.png")}
+          style={styles.pom}
+        />
+        <Text>ProgressBar</Text>
         <Text>
-          Main Screen{depth1} {depth2} {depth3}
+          Main Screen {depth1} {depth2} {depth3}
         </Text>
         <TouchableOpacity
           onPressOut={() =>
             this.props.navigation.navigate({ routeName: "Settings" })
           }
         >
-          <Text>Go Setting</Text>
+          <AntDesign name="setting" style={styles.set} />
         </TouchableOpacity>
         <Text>{output}</Text>
-      </LinearGradient>
+      </ImageBackground>
     );
   }
 
@@ -94,6 +105,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center"
+  },
+  pom: {
+    width: 250,
+    height: 250
+  },
+  set: {
+    fontSize: 25
   }
 });
 

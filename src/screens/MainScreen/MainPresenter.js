@@ -19,7 +19,6 @@ import {
   Image,
   ImageBackground
 } from "react-native";
-import ProgressBar from "react-native-progress/Bar";
 import { AntDesign } from "@expo/vector-icons";
 import { geoAddress } from "../../api/kakaoApi";
 import { getLocation } from "../../api/weather";

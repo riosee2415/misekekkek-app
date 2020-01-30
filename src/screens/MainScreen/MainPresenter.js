@@ -19,7 +19,7 @@ import {
   Image,
   ImageBackground
 } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
+import ProgressBar from "react-native-progress/Bar";
 import { AntDesign } from "@expo/vector-icons";
 import { geoAddress } from "../../api/kakaoApi";
 import { getLocation } from "../../api/weather";
@@ -45,22 +45,34 @@ class Main extends React.Component {
         style={styles.container}
       >
         <StatusBar barStyle={"dark-content"} />
-        <Image
-          source={require("./src/pompom/POMPOM_W.png")}
-          style={styles.pom}
-        />
-        <Text>ProgressBar</Text>
-        <Text>
-          Main Screen {depth1} {depth2} {depth3}
-        </Text>
-        <TouchableOpacity
-          onPressOut={() =>
-            this.props.navigation.navigate({ routeName: "Settings" })
-          }
-        >
-          <AntDesign name="setting" style={styles.set} />
-        </TouchableOpacity>
-        <Text>{output}</Text>
+        <View style={styles.setCover}>
+          <TouchableOpacity
+            onPressOut={() =>
+              this.props.navigation.navigate({ routeName: "Settings" })
+            }
+          >
+            <AntDesign name="setting" style={styles.set} />
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.conCover}>
+          <Image
+            source={require("./src/pompom/POMPOM_W.png")}
+            style={styles.pom}
+          />
+          <Text>ProgressBar</Text>
+          <Text>
+            Main Screen {depth1} {depth2} {depth3}
+          </Text>
+          <TouchableOpacity
+            onPressOut={() =>
+              this.props.navigation.navigate({ routeName: "Settings" })
+            }
+          >
+            <AntDesign name="setting" style={styles.set} />
+          </TouchableOpacity>
+          <Text>{output}</Text>
+        </View>
       </ImageBackground>
     );
   }
@@ -110,8 +122,17 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250
   },
+  setCover: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  },
   set: {
     fontSize: 25
+  },
+  conCover: {
+    flex: 3,
+    alignItems: "center"
   }
 });
 

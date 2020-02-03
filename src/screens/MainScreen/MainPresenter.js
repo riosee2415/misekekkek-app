@@ -47,7 +47,7 @@ class Main extends React.Component {
 
         <View style={styles.setCover}>
           <MaterialIcons name="location-on" style={styles.loca}>
-            <Text>
+            <Text style={styles.locaText}>
               {depth1} {depth2} {depth3}
             </Text>
           </MaterialIcons>
@@ -134,17 +134,20 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
-    paddingTop: 20
+    alignItems: "flex-start",
+    paddingTop: 50
   },
   loca: {
+    fontSize: 20
+  },
+  locaText: {
     fontSize: 15
   },
   set: {
     fontSize: 25
   },
   pomCover: {
-    flex: 8,
+    flex: 3,
     justifyContent: "center",
     alignItems: "center"
   },

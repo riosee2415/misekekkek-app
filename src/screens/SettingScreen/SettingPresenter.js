@@ -62,8 +62,12 @@ export default class App extends React.Component {
             onCancel={() => this.onCancel()}
             onConfirm={(hour, minute) => this.onConfirm(hour, minute)}
           />
-          <ButtonText>마케팅 동의</ButtonText>
-          <ButtonText>이용정보 처리 방침</ButtonText>
+          <TouchableOpacity>
+            <ButtonText>마케팅 동의</ButtonText>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <ButtonText>이용정보 처리 방침</ButtonText>
+          </TouchableOpacity>
         </Content>
       </Container>
     );

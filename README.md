@@ -31,6 +31,7 @@ fine dust information app. used react-native | firebase
     <pre>
         npm install expo-linear-gradient
         npm i react-native-24h-timepicker --save
+        npm install styled-components
     </pre>
 
 * How to move ? -> Setting Screen that is name "Settings"

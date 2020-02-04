@@ -19,11 +19,7 @@ import {
   Image,
   ImageBackground
 } from "react-native";
-<<<<<<< HEAD
-import { AntDesign } from "@expo/vector-icons";
-=======
 import { AntDesign, MaterialIcons } from "@expo/vector-icons";
->>>>>>> a875686837fb0d79f35d4f5e81d49a5a7c6149d3
 import { geoAddress } from "../../api/kakaoApi";
 import { getLocation } from "../../api/weather";
 import { firestore } from "../../firebase";

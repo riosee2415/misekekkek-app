@@ -41,10 +41,11 @@ class Main extends React.Component {
   }
 
   render() {
-    const { depth1, depth2, depth3, output } = this.state;
+    const { depth1, depth2, depth3, output, level } = this.state;
+
     return (
       <ImageBackground
-        source={require("./src/iPhone_Xr/7_Level_iPhone_Xr.jpg")}
+        source={require("./src/iPhone_Xr/1_Level_iPhone_Xr.jpg")}
         style={styles.container}
       >
         <StatusBar barStyle={"dark-content"} />
@@ -95,7 +96,7 @@ class Main extends React.Component {
 
     await firestore
       .collection("exp_text")
-      .where("lv", "==", "1")
+      .where("lv", "==", "2")
       .get()
       .then(docs => {
         docs.forEach(doc => {
@@ -123,7 +124,7 @@ class Main extends React.Component {
       });
     }
   };
-}
+} // -- class end
 
 const styles = StyleSheet.create({
   container: {

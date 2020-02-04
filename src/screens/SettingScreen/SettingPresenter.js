@@ -1,14 +1,16 @@
-/* UPDATE DATE : 2020-01-05
-   UPDATOR : KIM KYOUNGMIN
-   UPDATE DESCRIPTION : Tab-Navigation can enter setting screen */
-
-/* UPDATE DATE : 2020-01-30
-   UPDATOR : KIM HANJU
-   UPDATE DESCRIPTION : Dark & White Mode Switch*/
-
-/* UPDATE DATE : 2020-02-03
-   UPDATOR : KIM HANJU
-   UPDATE DESCRIPTION : Time Picker*/
+/**
+ * UPDATE DATE : 2020-01-05
+ * UPDATOR : KIM KYOUNGMIN
+ * UPDATE DESCRIPTION : Tab-Navigation can enter setting screen
+ *
+ * UPDATE DATE : 2020-01-30
+ * UPDATOR : KIM HANJU
+ * UPDATE DESCRIPTION : Dark & White Mode Switch
+ *
+ * UPDATE DATE : 2020-02-03
+ * UPDATOR : KIM HANJU
+ * UPDATE DESCRIPTION : Time Picker
+ */
 import React from "react";
 import { View, Text, Switch, TouchableOpacity } from "react-native";
 import styled from "styled-components";

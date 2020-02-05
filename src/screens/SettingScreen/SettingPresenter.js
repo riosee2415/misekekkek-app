@@ -16,6 +16,11 @@ import { View, Text, Switch, TouchableOpacity, StyleSheet } from "react-native";
 import styled from "styled-components";
 import TimePicker from "react-native-24h-timepicker";
 import { AsyncStorage } from "../../middleware/middleware";
+import {
+  AntDesign,
+  MaterialIcons,
+  MaterialCommunityIcons
+} from "@expo/vector-icons";
 import { publicColor } from "../../middleware/publicColor";
 
 export default class App extends React.Component {
@@ -57,20 +62,35 @@ export default class App extends React.Component {
       <View style={theme === "white" ? styles.themeWhite : styles.themeBlack}>
         <Content>
           <Switchstyle>
-            <ButtonText>테마 설정</ButtonText>
+            <ButtonText>
+              <MaterialCommunityIcons
+                style={styles.icon}
+                name="theme-light-dark"
+              />
+              &nbsp;테마 설정
+            </ButtonText>
+            <AlermButton onPress={() => this.TimePicker.open()}>
+              <ButtonText>
+                <AntDesign style={styles.icon} name="clockcircle" />
+                &nbsp;알림 설정
+              </ButtonText>
+            </AlermButton>
+            <ButtonText>마케팅 동의</ButtonText>
+
+            <ButtonText>이용정보 처리 방침</ButtonText>
+          </Switchstyle>
+          <Timestyle>
             <Switch
               onValueChange={this.toggleSwitch}
               value={this.state.switchValue}
             />
-            <ButtonText>
-              {this.state.switchValue ? "Dark Mode" : "White Mode"}
-            </ButtonText>
-          </Switchstyle>
-          <Timestyle>
-            <AlermButton onPress={() => this.TimePicker.open()}>
-              <ButtonText>알림 설정</ButtonText>
-            </AlermButton>
             <ButtonText>{this.state.time}</ButtonText>
+            <TouchableOpacity>
+              <AntDesign style={styles.icon} name="right" />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <AntDesign style={styles.icon} name="right" />
+            </TouchableOpacity>
           </Timestyle>
           <TimePicker
             ref={ref => {
@@ -79,12 +99,6 @@ export default class App extends React.Component {
             onCancel={() => this.onCancel()}
             onConfirm={(hour, minute) => this.onConfirm(hour, minute)}
           />
-          <TouchableOpacity>
-            <ButtonText>마케팅 동의</ButtonText>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <ButtonText>이용정보 처리 방침</ButtonText>
-          </TouchableOpacity>
         </Content>
       </View>
     );
@@ -102,7 +116,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: publicColor.bgBlack
+    backgroundColor: publicColor.bgBlack,
+    color: publicColor.bgWhite
+  },
+  icon: {
+    fontSize: 18,
+    padding: 10
   }
 });
 
@@ -114,26 +133,26 @@ const Container = styled.View`
 
 const Content = styled.View`
   flex: 1;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: row;
   align-items: center;
 `;
 const Switchstyle = styled.View`
-  width: 90%;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-direction: row;
-  padding-bottom: 10;
-`;
-const ButtonText = styled.Text`
-  font-size: 16;
-`;
-const AlermButton = styled.TouchableOpacity`
-  font-size: 18;
-`;
-const Timestyle = styled.TouchableOpacity`
-  width: 90%;
+  width: 100%;
   align-items: center;
   justify-content: space-around;
-  flex-direction: row;
-  padding-bottom: 10;
+  padding: 10px;
+`;
+const ButtonText = styled.Text`
+  font-size: 16px;
+  padding: 10px;
+`;
+const AlermButton = styled.TouchableOpacity`
+  font-size: 18px;
+`;
+const Timestyle = styled.View`
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
 `;

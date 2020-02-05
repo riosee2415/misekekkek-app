@@ -94,20 +94,20 @@ class Main extends React.Component {
   componentDidMount = async () => {
     console.log("Mount test");
 
-    await firestore
-      .collection("exp_text")
-      .where("lv", "==", "2")
-      .get()
-      .then(docs => {
-        docs.forEach(doc => {
-          console.log(doc.id);
-          console.log(doc.data().output);
+    // await firestore
+    //   .collection("exp_text")
+    //   .where("lv", "==", "2")
+    //   .get()
+    //   .then(docs => {
+    //     docs.forEach(doc => {
+    //       console.log(doc.id);
+    //       console.log(doc.data().output);
 
-          this.setState({
-            output: doc.data().output
-          });
-        });
-      });
+    //       this.setState({
+    //         output: doc.data().output
+    //       });
+    //     });
+    //   });
 
     const coords = await getLocation();
 

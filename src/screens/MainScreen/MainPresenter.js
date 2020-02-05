@@ -7,6 +7,10 @@
  * UPDATE DATE : 2020-01-12
  * UPDATOR : YUN SANGHO
  * UPDATE DESCRIPTION : Chageed func => Class Compoenent && Include Current Location Name for Korean
+ *
+ * UPDATE DATE : 2020-01-29
+ * UPDATOR : SONG SEONGMIN
+ * UPDATE DESCRIPTION : Add ImageBackground
  */
 
 import React from "react";
@@ -64,7 +68,7 @@ class Main extends React.Component {
 
         <View style={styles.pomCover}>
           <Image
-            source={require("./src/pompom/POMPOM_W.png")}
+            source={require("./src/pompom/7_Level_POMPOM_1000x1000.png")}
             style={styles.pom}
           />
           <Text style={styles.proGress}>ProgressBar</Text>
@@ -75,7 +79,8 @@ class Main extends React.Component {
               this.props.navigation.navigate({ routeName: "Settings" })
             }
           >
-            <AntDesign name="setting" style={styles.set} />
+            <AntDesign name="plussquareo" style={styles.pluse} />
+            <Text>더보기</Text>
           </TouchableOpacity>
 
           <View style={styles.conCover}>
@@ -139,7 +144,9 @@ const styles = StyleSheet.create({
     paddingTop: 50
   },
   loca: {
-    fontSize: 20
+    fontSize: 20,
+    justifyContent: "center",
+    alignItems: "center"
   },
   locaText: {
     fontSize: 15
@@ -160,7 +167,14 @@ const styles = StyleSheet.create({
     paddingTop: 10
   },
   more: {
-    paddingTop: 10
+    paddingTop: 10,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  pluse: {
+    fontSize: 12,
+    marginRight: 5
   },
   conCover: {
     flex: 1,

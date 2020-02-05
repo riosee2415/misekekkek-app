@@ -26,7 +26,7 @@ import {
 import { AntDesign, MaterialIcons } from "@expo/vector-icons";
 import { geoAddress } from "../../api/kakaoApi";
 import { getLocation } from "../../api/weather";
-import { firestore } from "../../firebase";
+//import { firestore } from "../../firebase";
 
 class Main extends React.Component {
   constructor(props) {

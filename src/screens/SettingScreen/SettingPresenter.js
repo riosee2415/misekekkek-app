@@ -10,21 +10,35 @@
    UPDATOR : KIM HANJU
    UPDATE DESCRIPTION : Time Picker*/
 import React from "react";
-import { View, Text, Switch, TouchableOpacity } from "react-native";
+import { View, Text, Switch, TouchableOpacity, StyleSheet } from "react-native";
 import styled from "styled-components";
 import TimePicker from "react-native-24h-timepicker";
+import { AsyncStorage } from "../../middleware/middleware";
+import { publicColor } from "../../middleware/publicColor";
 
 export default class App extends React.Component {
-  state = { switchValue: false };
-  toggleSwitch = value => {
-    this.setState({ switchValue: value });
-  };
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      time: ""
+      time: "",
+      theme: "white"
     };
   }
+  state = { switchValue: false };
+  toggleSwitch = async value => {
+    this.setState({ switchValue: value });
+    AsyncStorage.setItem("theme", value + "", null);
+
+    const currentTheme = await AsyncStorage.getItem("theme");
+
+    currentTheme === "true"
+      ? this.setState({
+          theme: "black"
+        })
+      : this.setState({
+          theme: "white"
+        });
+  };
 
   onCancel() {
     this.TimePicker.close();
@@ -36,8 +50,9 @@ export default class App extends React.Component {
   }
 
   render() {
+    const { theme } = this.state;
     return (
-      <Container>
+      <View style={theme === "white" ? styles.themeWhite : styles.themeBlack}>
         <Content>
           <Switchstyle>
             <ButtonText>테마 설정</ButtonText>
@@ -69,15 +84,32 @@ export default class App extends React.Component {
             <ButtonText>이용정보 처리 방침</ButtonText>
           </TouchableOpacity>
         </Content>
-      </Container>
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  themeWhite: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: publicColor.bgWhite
+  },
+  themeBlack: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: publicColor.bgBlack
+  }
+});
+
 const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
 `;
+
 const Content = styled.View`
   flex: 1;
   justify-content: center;

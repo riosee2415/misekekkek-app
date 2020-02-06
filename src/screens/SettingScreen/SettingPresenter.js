@@ -16,6 +16,9 @@ import { View, Text, Switch, TouchableOpacity, StyleSheet } from "react-native";
 import styled from "styled-components";
 import TimePicker from "react-native-24h-timepicker";
 import { AsyncStorage } from "../../middleware/middleware";
+import SettingMenu from "../../components/SettingMenu";
+import ToggleButton from "../../components/ToggleButton";
+import TimePickerBtn from "../../components/TimePicker";
 import {
   AntDesign,
   MaterialIcons,
@@ -24,44 +27,49 @@ import {
 import { publicColor } from "../../middleware/publicColor";
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      time: "",
-      theme: "white"
-    };
-  }
-  state = { switchValue: false };
-  toggleSwitch = async value => {
-    this.setState({ switchValue: value });
-    AsyncStorage.setItem("theme", value + "", null);
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     time: "",
+  //     theme: "white"
+  //   };
+  // }
+  // state = { switchValue: false };
+  // toggleSwitch = async value => {
+  //   this.setState({ switchValue: value });
+  //   AsyncStorage.setItem("theme", value + "", null);
 
-    const currentTheme = await AsyncStorage.getItem("theme");
+  //   const currentTheme = await AsyncStorage.getItem("theme");
 
-    currentTheme === "true"
-      ? this.setState({
-          theme: "black"
-        })
-      : this.setState({
-          theme: "white"
-        });
-  };
+  //   currentTheme === "true"
+  //     ? this.setState({
+  //         theme: "black"
+  //       })
+  //     : this.setState({
+  //         theme: "white"
+  //       });
+  // };
 
-  onCancel() {
-    this.TimePicker.close();
-  }
+  // onCancel() {
+  //   this.TimePicker.close();
+  // }
 
-  onConfirm(hour, minute) {
-    this.setState({ time: `${hour}:${minute}` });
-    this.TimePicker.close();
-  }
+  // onConfirm(hour, minute) {
+  //   this.setState({ time: `${hour}:${minute}` });
+  //   this.TimePicker.close();
+  // }
 
   render() {
-    const { theme } = this.state;
+    // const { theme } = this.state;
     return (
-      <View style={theme === "white" ? styles.themeWhite : styles.themeBlack}>
+      //style={theme === "white" ? styles.themeWhite : styles.themeBlack}
+      <View style={styles.container}>
         <Content>
-          <Switchstyle>
+          <SettingMenu set={"Theme"} val={<ToggleButton />} />
+          <SettingMenu set={"Alert"} val={<TimePickerBtn />} />
+          <SettingMenu set={"Config"} val={">"} />
+          <SettingMenu set={"High"} val={">"} />
+          {/* <Switchstyle>
             <ButtonText>
               <MaterialCommunityIcons
                 style={styles.icon}
@@ -98,7 +106,7 @@ export default class App extends React.Component {
             }}
             onCancel={() => this.onCancel()}
             onConfirm={(hour, minute) => this.onConfirm(hour, minute)}
-          />
+          /> */}
         </Content>
       </View>
     );
@@ -106,6 +114,12 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    backgroundColor: "#fff",
+    paddingTop: 100
+  },
   themeWhite: {
     flex: 1,
     justifyContent: "center",
@@ -125,16 +139,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`;
-
 const Content = styled.View`
   flex: 1;
-  justify-content: space-evenly;
-  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
 `;
 const Switchstyle = styled.View`

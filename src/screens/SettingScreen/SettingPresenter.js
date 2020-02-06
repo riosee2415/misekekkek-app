@@ -65,8 +65,17 @@ export default class App extends React.Component {
       //style={theme === "white" ? styles.themeWhite : styles.themeBlack}
       <View style={styles.container}>
         <Content>
-          <SettingMenu set={"Theme"} val={<ToggleButton />} />
-          <SettingMenu set={"Alert"} val={<TimePickerBtn />} />
+          <SettingMenu
+            set={[
+              <MaterialCommunityIcons
+                style={styles.icon}
+                name="theme-light-dark"
+              />,
+              "Them"
+            ]}
+            val={<ToggleButton />}
+          />
+          <SettingMenu set={"Alerm"} val={<TimePickerBtn />} />
           <SettingMenu set={"Config"} val={">"} />
           <SettingMenu set={"High"} val={">"} />
           {/* <Switchstyle>

@@ -23,7 +23,7 @@ class TimePickerBtn extends Component {
     return (
       <View>
         <TouchableOpacity onPress={() => this.TimePicker.open()}>
-          <Text>TIMEPICKER</Text>
+          <Text>Alerm</Text>
         </TouchableOpacity>
         <Text>{this.state.time}</Text>
         <TimePicker

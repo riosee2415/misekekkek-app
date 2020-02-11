@@ -26,6 +26,10 @@ import {
 import { AntDesign, MaterialIcons } from "@expo/vector-icons";
 import { geoAddress } from "../../api/kakaoApi";
 import { getLocation } from "../../api/weather";
+import SetCover from "../../components/SetCover";
+import PomCover from "../../components/PomCover";
+import styled from "styled-components";
+
 //import { firestore } from "../../firebase";
 
 class Main extends React.Component {
@@ -36,63 +40,144 @@ class Main extends React.Component {
       depth1: null,
       depth2: null,
       depth3: null,
-      output: null
+      output: null,
+      level: 1,
+      bgPath: "../../assets/iPhone_Xr/1_Level_iPhone_Xr.jpg"
     };
   }
 
   render() {
-    const { depth1, depth2, depth3, output, level } = this.state;
+    const { depth1, depth2, depth3, output, level, bgPath } = this.state;
 
     return (
-      <ImageBackground
-        source={require("./src/iPhone_Xr/1_Level_iPhone_Xr.jpg")}
-        style={styles.container}
-      >
-        <StatusBar barStyle={"dark-content"} />
-
-        <View style={styles.setCover}>
-          <MaterialIcons name="location-on" style={styles.loca}>
-            <Text style={styles.locaText}>
-              {depth1} {depth2} {depth3}
-            </Text>
-          </MaterialIcons>
-
-          <TouchableOpacity
-            onPressOut={() =>
-              this.props.navigation.navigate({ routeName: "Settings" })
-            }
+      <View style={styles.container}>
+        {level === 1 ? (
+          <ImageBackground
+            style={styles.container}
+            source={require("../../assets/iPhone_Xr/1_Level_iPhone_Xr.jpg")}
           >
-            <AntDesign name="setting" style={styles.set} />
-          </TouchableOpacity>
-        </View>
+            <StatusBar barStyle={"dark-content"} />
+            <SetCover
+              depth1={depth1}
+              depth2={depth2}
+              depth3={depth3}
+              navi={this.props.navigation}
+            />
+            <PomCover output={output} />
+          </ImageBackground>
+        ) : null}
 
-        <View style={styles.pomCover}>
-          <Image
-            source={require("./src/pompom/7_Level_POMPOM_1000x1000.png")}
-            style={styles.pom}
-          />
-          <Text style={styles.proGress}>ProgressBar</Text>
-
-          <TouchableOpacity
-            style={styles.more}
-            onPressOut={() =>
-              this.props.navigation.navigate({ routeName: "Settings" })
-            }
+        {level === 2 ? (
+          <ImageBackground
+            style={styles.container}
+            source={require("../../assets/iPhone_Xr/2_Level_iPhone_Xr.jpg")}
           >
-            <AntDesign name="plussquareo" style={styles.pluse} />
-            <Text>더보기</Text>
-          </TouchableOpacity>
+            <StatusBar barStyle={"dark-content"} />
+            <SetCover
+              depth1={depth1}
+              depth2={depth2}
+              depth3={depth3}
+              navi={this.props.navigation}
+            />
+            <PomCover output={output} />
+          </ImageBackground>
+        ) : null}
 
-          <View style={styles.conCover}>
-            <Text>{output}</Text>
-          </View>
-        </View>
-      </ImageBackground>
+        {level === 3 ? (
+          <ImageBackground
+            style={styles.container}
+            source={require("../../assets/iPhone_Xr/3_Level_iPhone_Xr.jpg")}
+          >
+            <StatusBar barStyle={"dark-content"} />
+            <SetCover
+              depth1={depth1}
+              depth2={depth2}
+              depth3={depth3}
+              navi={this.props.navigation}
+            />
+            <PomCover output={output} />
+          </ImageBackground>
+        ) : null}
+
+        {level === 4 ? (
+          <ImageBackground
+            style={styles.container}
+            source={require("../../assets/iPhone_Xr/4_Level_iPhone_Xr.jpg")}
+          >
+            <StatusBar barStyle={"dark-content"} />
+            <SetCover
+              depth1={depth1}
+              depth2={depth2}
+              depth3={depth3}
+              navi={this.props.navigation}
+            />
+            <PomCover output={output} />
+          </ImageBackground>
+        ) : null}
+
+        {level === 5 ? (
+          <ImageBackground
+            style={styles.container}
+            source={require("../../assets/iPhone_Xr/5_Level_iPhone_Xr.jpg")}
+          >
+            <StatusBar barStyle={"dark-content"} />
+            <SetCover
+              depth1={depth1}
+              depth2={depth2}
+              depth3={depth3}
+              navi={this.props.navigation}
+            />
+            <PomCover output={output} />
+          </ImageBackground>
+        ) : null}
+
+        {level === 6 ? (
+          <ImageBackground
+            style={styles.container}
+            source={require("../../assets/iPhone_Xr/6_Level_iPhone_Xr.jpg")}
+          >
+            <StatusBar barStyle={"dark-content"} />
+            <SetCover
+              depth1={depth1}
+              depth2={depth2}
+              depth3={depth3}
+              navi={this.props.navigation}
+            />
+            <PomCover output={output} />
+          </ImageBackground>
+        ) : null}
+
+        {level === 7 ? (
+          <ImageBackground
+            style={styles.container}
+            source={require("../../assets/iPhone_Xr/7_Level_iPhone_Xr.jpg")}
+          >
+            <StatusBar barStyle={"dark-content"} />
+            <SetCover
+              depth1={depth1}
+              depth2={depth2}
+              depth3={depth3}
+              navi={this.props.navigation}
+            />
+            <PomCover output={output} />
+          </ImageBackground>
+        ) : null}
+      </View>
     );
   }
 
   componentDidMount = async () => {
     console.log("Mount test");
+
+    const { level, bgPath } = this.state;
+
+    if (level === 1) {
+      bgPath = "../../assets/iPhone_Xr/1_Level_iPhone_Xr.jpg";
+    } else if (level === 2) {
+      bgPath = "../../assets/iPhone_Xr/2_Level_iPhone_Xr.jpg";
+    } else {
+      bgPath = "../../assets/iPhone_Xr/7_Level_iPhone_Xr.jpg";
+    }
 
     // await firestore
     //   .collection("exp_text")

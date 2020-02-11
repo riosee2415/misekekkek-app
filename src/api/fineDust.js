@@ -28,7 +28,8 @@ import { getLocation } from "./weather";
 
 const params = {
   baseURL: "http://openapi.airkorea.or.kr/openapi/services/rest/",
-  api_key: F_API_KEY,
+  api_key:
+    "gwgOFQcTz1OXVVg7nCx6B05%2B17ykz9X9GWRQfo8nwjWxuwfIY43OuBO%2ByxfWHWx1YqKAlHO0OZJVtd%2FxvDpTAg%3D%3D",
   returnType: "json"
 };
 
@@ -70,6 +71,12 @@ const getTMStdrCrdntByAddr = async () => {
   const { data } = await axios.get(
     `${params.baseURL}MsrstnInfoInqireSvc/getTMStdrCrdnt?umdName=${address}&ServiceKey=${params.api_key}&_returnType=${params.returnType}`
   );
+  console.log(params.api_key);
+  console.log(
+    params.api_key ===
+      "gwgOFQcTz1OXVVg7nCx6B05%2B17ykz9X9GWRQfo8nwjWxuwfIY43OuBO%2ByxfWHWx1YqKAlHO0OZJVtd%2FxvDpTAg%3D%3D"
+  );
+  console.log(data);
   return data.list[0];
 };
 

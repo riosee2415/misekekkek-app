@@ -30,8 +30,12 @@ import { StyleSheet, Text, View } from "react-native";
 import { getPlatform } from "./src/middleware/middleware";
 import MainNavigation from "./src/navigation/Navigation";
 import { geoAddress } from "./src/api/kakaoApi";
+import { fineDust } from "./src/api/fineDust";
 
 class App extends React.Component {
+  componentDidMount = async () => {
+    console.log(await fineDust.getNearbyFineDust());
+  };
   render() {
     console.log(`Current Platform :`, getPlatform());
     return <MainNavigation />;

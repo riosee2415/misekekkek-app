@@ -4,7 +4,6 @@
 
 import React, { Component } from "react";
 import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
-import TimepickerBtn from "../../components/TimePicker";
 import TimePicker from "react-native-simple-time-picker";
 import { AsyncStorage } from "../../middleware/middleware";
 

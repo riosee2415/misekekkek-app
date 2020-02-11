@@ -169,31 +169,6 @@ class Main extends React.Component {
   componentDidMount = async () => {
     console.log("Mount test");
 
-    const { level, bgPath } = this.state;
-
-    if (level === 1) {
-      bgPath = "../../assets/iPhone_Xr/1_Level_iPhone_Xr.jpg";
-    } else if (level === 2) {
-      bgPath = "../../assets/iPhone_Xr/2_Level_iPhone_Xr.jpg";
-    } else {
-      bgPath = "../../assets/iPhone_Xr/7_Level_iPhone_Xr.jpg";
-    }
-
-    // await firestore
-    //   .collection("exp_text")
-    //   .where("lv", "==", "2")
-    //   .get()
-    //   .then(docs => {
-    //     docs.forEach(doc => {
-    //       console.log(doc.id);
-    //       console.log(doc.data().output);
-
-    //       this.setState({
-    //         output: doc.data().output
-    //       });
-    //     });
-    //   });
-
     const coords = await getLocation();
 
     let geo = null;

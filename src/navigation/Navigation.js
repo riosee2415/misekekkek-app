@@ -4,13 +4,15 @@
 
 import Main from "../screens/MainScreen";
 import Setting from "../screens/SettingScreen";
+import Alerm from "../modal/ModalPresenter";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
 const MainNavigation = createStackNavigator(
   {
     Tabs: { screen: Main, navigationOptions: { headerShown: false } },
-    Settings: { screen: Setting }
+    Settings: { screen: Setting },
+    Alerm: { screen: Alerm }
   },
   {
     headerMode: "screen",

@@ -28,11 +28,12 @@ fine dust information app. used react-native | firebase
 
 - Screen View
 
-    <pre>
-        npm install expo-linear-gradient
-        npm i react-native-24h-timepicker --save
-        npm install styled-components
-    </pre>
+      <pre>
+          npm install expo-linear-gradient
+          npm install styled-components1
+        npm install react-native-simple-time-picker --save
+
+  </pre>
 
 * How to move ? -> Setting Screen that is name "Settings"
 

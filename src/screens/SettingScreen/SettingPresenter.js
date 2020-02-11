@@ -14,11 +14,11 @@
 import React from "react";
 import { View, Text, Switch, TouchableOpacity, StyleSheet } from "react-native";
 import styled from "styled-components";
-import TimePicker from "react-native-24h-timepicker";
 import { AsyncStorage } from "../../middleware/middleware";
 import SettingMenu from "../../components/SettingMenu";
 import ToggleButton from "../../components/ToggleButton";
 import TimePickerBtn from "../../components/TimePicker";
+import ModalPresenter from "../../modal/ModalPresenter";
 import {
   AntDesign,
   MaterialIcons,
@@ -27,95 +27,32 @@ import {
 import { publicColor } from "../../middleware/publicColor";
 
 export default class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     time: "",
-  //     theme: "white"
-  //   };
-  // }
-  // state = { switchValue: false };
-  // toggleSwitch = async value => {
-  //   this.setState({ switchValue: value });
-  //   AsyncStorage.setItem("theme", value + "", null);
+  constructor(props) {
+    super(props);
 
-  //   const currentTheme = await AsyncStorage.getItem("theme");
-
-  //   currentTheme === "true"
-  //     ? this.setState({
-  //         theme: "black"
-  //       })
-  //     : this.setState({
-  //         theme: "white"
-  //       });
-  // };
-
-  // onCancel() {
-  //   this.TimePicker.close();
-  // }
-
-  // onConfirm(hour, minute) {
-  //   this.setState({ time: `${hour}:${minute}` });
-  //   this.TimePicker.close();
-  // }
+    this.state = {
+      modalVisible: true
+    };
+  }
 
   render() {
-    // const { theme } = this.state;
+    const { modalVisible } = this.state;
     return (
-      //style={theme === "white" ? styles.themeWhite : styles.themeBlack}
       <View style={styles.container}>
         <Content>
           <SettingMenu
-            set={[
-              <MaterialCommunityIcons
-                style={styles.icon}
-                name="theme-light-dark"
-              />,
-              "Them"
-            ]}
-            val={<ToggleButton />}
+            set={"alerm"}
+            val={
+              modalVisible ? (
+                <ModalPresenter navi={this.props.navigation} />
+              ) : null
+            }
+            alerm={true}
+            navi={this.props.navigation}
           />
-          <SettingMenu set={"Alerm"} val={<TimePickerBtn />} />
-          <SettingMenu set={"Config"} val={">"} />
-          <SettingMenu set={"High"} val={">"} />
-          {/* <Switchstyle>
-            <ButtonText>
-              <MaterialCommunityIcons
-                style={styles.icon}
-                name="theme-light-dark"
-              />
-              &nbsp;테마 설정
-            </ButtonText>
-            <AlermButton onPress={() => this.TimePicker.open()}>
-              <ButtonText>
-                <AntDesign style={styles.icon} name="clockcircle" />
-                &nbsp;알림 설정
-              </ButtonText>
-            </AlermButton>
-            <ButtonText>마케팅 동의</ButtonText>
 
-            <ButtonText>이용정보 처리 방침</ButtonText>
-          </Switchstyle>
-          <Timestyle>
-            <Switch
-              onValueChange={this.toggleSwitch}
-              value={this.state.switchValue}
-            />
-            <ButtonText>{this.state.time}</ButtonText>
-            <TouchableOpacity>
-              <AntDesign style={styles.icon} name="right" />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <AntDesign style={styles.icon} name="right" />
-            </TouchableOpacity>
-          </Timestyle>
-          <TimePicker
-            ref={ref => {
-              this.TimePicker = ref;
-            }}
-            onCancel={() => this.onCancel()}
-            onConfirm={(hour, minute) => this.onConfirm(hour, minute)}
-          /> */}
+          <SettingMenu set={"Config"} val={">"} alerm={false} />
+          <SettingMenu set={"High"} val={">"} alerm={false} />
         </Content>
       </View>
     );

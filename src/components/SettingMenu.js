@@ -1,18 +1,52 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  TouchableOpacity,
+  TouchableHighlightBase
+} from "react-native";
 
 const { width } = Dimensions.get("window");
 
 class SettingMenu extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      open: false
+    };
   }
 
+  _handleOpen = () => {
+    this.setState({
+      open: !this.state.open
+    });
+  };
+
   render() {
+    const { open } = this.state;
+
     return (
       <View style={styles.box}>
-        <Text>{this.props.set}</Text>
-        <Text>{this.props.val}</Text>
+        {this.props.alerm ? (
+          <TouchableOpacity
+            onPressOut={() => this.props.navi.navigate({ routeName: "Alerm" })}
+          >
+            <Text>{this.props.set}</Text>
+          </TouchableOpacity>
+        ) : (
+          <Text>{this.props.set}</Text>
+        )}
+
+        {this.props.alerm ? (
+          open ? (
+            <View>{this.props.val}</View>
+          ) : null
+        ) : (
+          <Text>{this.props.val}</Text>
+        )}
       </View>
     );
   }

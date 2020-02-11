@@ -14,11 +14,7 @@ import { AsyncStorage } from "../../middleware/middleware";
 import SettingMenu from "../../components/SettingMenu";
 // import ToggleButton from "../../components/ToggleButton";
 import AlermPresenter from "../Alerm/AlermPresenter";
-import {
-  AntDesign,
-  MaterialIcons,
-  MaterialCommunityIcons
-} from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import { publicColor } from "../../middleware/publicColor";
 
 export default class App extends React.Component {
@@ -37,7 +33,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <Content>
           <SettingMenu
-            set={"Alerm"}
+            set={"알람 설정"}
             val={
               (hour === null ? "00" : hour < 10 ? "0" + hour : hour) +
               " : " +
@@ -47,8 +43,16 @@ export default class App extends React.Component {
             navi={this.props.navigation}
           />
 
-          <SettingMenu set={"Config"} val={">"} alerm={false} />
-          <SettingMenu set={"High"} val={">"} alerm={false} />
+          <SettingMenu
+            set={"이용 정보 처리 방침"}
+            val={<AntDesign name="right" style={{ fontSize: 15 }} />}
+            alerm={false}
+          />
+          <SettingMenu
+            set={"일반 설정"}
+            val={<AntDesign name="right" style={{ fontSize: 15 }} />}
+            alerm={false}
+          />
         </Content>
       </View>
     );

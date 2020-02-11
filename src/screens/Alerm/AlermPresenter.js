@@ -31,6 +31,7 @@ class AlermPresenter extends Component {
     const { selectedHours, selectedMinutes } = this.state;
     return (
       <View style={styles.container}>
+        <Text style={styles.text}>원하는 시간을 선택해 주세요.</Text>
         <TimePicker
           selectedHours={selectedHours}
           selectedMinutes={selectedMinutes}
@@ -42,8 +43,11 @@ class AlermPresenter extends Component {
           }
         />
 
-        <TouchableOpacity onPress={() => this._handleTime()}>
-          <Text> SAVE </Text>
+        <TouchableOpacity
+          style={styles.saveBtn}
+          onPress={() => this._handleTime()}
+        >
+          <Text> 저장 </Text>
         </TouchableOpacity>
       </View>
     );
@@ -55,7 +59,7 @@ export default AlermPresenter;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "flex-start",
+    alignItems: "center",
     backgroundColor: "#ede3f2"
   },
   modal: {
@@ -65,6 +69,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#f7021a"
   },
   text: {
-    color: "#3f2949"
+    marginTop: 20,
+    color: "#666666"
+  },
+  saveBtn: {
+    marginTop: 50,
+    padding: 10,
+    backgroundColor: "#ffb8b8"
   }
 });

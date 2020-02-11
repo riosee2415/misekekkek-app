@@ -4,8 +4,7 @@ import {
   Text,
   View,
   Dimensions,
-  TouchableOpacity,
-  TouchableHighlightBase
+  TouchableOpacity
 } from "react-native";
 
 const { width } = Dimensions.get("window");
@@ -26,8 +25,6 @@ class SettingMenu extends React.Component {
   };
 
   render() {
-    const { open } = this.state;
-
     return (
       <View style={styles.box}>
         {this.props.alerm ? (

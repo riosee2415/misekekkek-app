@@ -28,9 +28,7 @@ import { geoAddress } from "../../api/kakaoApi";
 import { getLocation } from "../../api/weather";
 import SetCover from "../../components/SetCover";
 import PomCover from "../../components/PomCover";
-import styled from "styled-components";
-
-//import { firestore } from "../../firebase";
+import { Rank } from "../../middleware/middleware";
 
 class Main extends React.Component {
   constructor(props) {
@@ -168,6 +166,10 @@ class Main extends React.Component {
 
   componentDidMount = async () => {
     console.log("Mount test");
+
+    this.setState({
+      level: await Rank.getRankByPm10()
+    });
 
     const coords = await getLocation();
 

@@ -16,9 +16,8 @@ import { View, Text, Switch, TouchableOpacity, StyleSheet } from "react-native";
 import styled from "styled-components";
 import { AsyncStorage } from "../../middleware/middleware";
 import SettingMenu from "../../components/SettingMenu";
-import ToggleButton from "../../components/ToggleButton";
-import TimePickerBtn from "../../components/TimePicker";
-import ModalPresenter from "../../modal/ModalPresenter";
+// import ToggleButton from "../../components/ToggleButton";
+import AlermPresenter from "../Alerm/AlermPresenter";
 import {
   AntDesign,
   MaterialIcons,
@@ -31,22 +30,20 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      modalVisible: true
+      modalVisible: true,
+      hour: 0,
+      min: 0
     };
   }
 
   render() {
-    const { modalVisible } = this.state;
+    const { modalVisible, hour, min } = this.state;
     return (
       <View style={styles.container}>
         <Content>
           <SettingMenu
-            set={"alerm"}
-            val={
-              modalVisible ? (
-                <ModalPresenter navi={this.props.navigation} />
-              ) : null
-            }
+            set={"Alerm"}
+            val={hour + " : " + min}
             alerm={true}
             navi={this.props.navigation}
           />
@@ -57,6 +54,25 @@ export default class App extends React.Component {
       </View>
     );
   }
+
+  shouldComponentUpdate = () => {
+    this._initTimeValue();
+    return true;
+  };
+
+  componentDidMount = () => {
+    this._initTimeValue();
+  };
+
+  _initTimeValue = async () => {
+    const hourData = await AsyncStorage.getItem("hour");
+    const minData = await AsyncStorage.getItem("min");
+
+    this.setState({
+      hour: hourData,
+      min: minData
+    });
+  };
 }
 
 const styles = StyleSheet.create({

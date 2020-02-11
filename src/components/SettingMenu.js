@@ -40,13 +40,7 @@ class SettingMenu extends React.Component {
           <Text>{this.props.set}</Text>
         )}
 
-        {this.props.alerm ? (
-          open ? (
-            <View>{this.props.val}</View>
-          ) : null
-        ) : (
-          <Text>{this.props.val}</Text>
-        )}
+        <Text>{this.props.val}</Text>
       </View>
     );
   }

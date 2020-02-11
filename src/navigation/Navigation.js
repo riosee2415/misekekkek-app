@@ -4,7 +4,7 @@
 
 import Main from "../screens/MainScreen";
 import Setting from "../screens/SettingScreen";
-import Alerm from "../modal/ModalPresenter";
+import Alerm from "../screens/Alerm";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 

@@ -76,7 +76,7 @@ const getTMStdrCrdntByAddr = async () => {
     params.api_key ===
       "gwgOFQcTz1OXVVg7nCx6B05%2B17ykz9X9GWRQfo8nwjWxuwfIY43OuBO%2ByxfWHWx1YqKAlHO0OZJVtd%2FxvDpTAg%3D%3D"
   );
-  console.log(data);
+
   return data.list[0];
 };
 

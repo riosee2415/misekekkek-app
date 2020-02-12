@@ -374,11 +374,11 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   pom: {
-    width: 250,
-    height: 250
+    width: 230,
+    height: 230
   },
   proGress: {
-    marginTop: 15,
+    marginTop: 35,
     marginBottom: 15,
     width: 250,
     height: 25

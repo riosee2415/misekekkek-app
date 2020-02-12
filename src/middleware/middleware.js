@@ -147,7 +147,7 @@ const getRankByPm10 = () => {
   const maxVal = 150;
   let currentVal = 0;
   try {
-    currentVal = 33;
+    currentVal = 120;
   } catch (error) {
     console.log("미세먼지 정보를 가져올 수 없습니다. 관리자에게 문읜하세요.");
   }

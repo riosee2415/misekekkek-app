@@ -23,11 +23,10 @@ import {
   Image,
   ImageBackground
 } from "react-native";
-import { AntDesign, MaterialIcons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import { geoAddress } from "../../api/kakaoApi";
 import { getLocation } from "../../api/weather";
 import SetCover from "../../components/SetCover";
-import PomCover from "../../components/PomCover";
 import { Rank } from "../../middleware/middleware";
 
 class Main extends React.Component {
@@ -61,7 +60,32 @@ class Main extends React.Component {
               depth3={depth3}
               navi={this.props.navigation}
             />
-            <PomCover output={output} />
+
+            <View style={styles.pomCover}>
+              <Image
+                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                style={styles.pom}
+              />
+
+              <Image
+                source={require("../../assets/progressbar/1_Level.png")}
+                style={styles.proGress}
+              />
+
+              <TouchableOpacity
+                style={styles.more}
+                // onPressOut={() =>
+                //   this.props.navigation.navigate({ routeName: "More" })
+                // }
+              >
+                <AntDesign name="plussquareo" style={styles.pluse} />
+                <Text>더보기</Text>
+              </TouchableOpacity>
+
+              <View style={styles.conCover}>
+                <Text>{output}</Text>
+              </View>
+            </View>
           </ImageBackground>
         ) : null}
 
@@ -77,7 +101,31 @@ class Main extends React.Component {
               depth3={depth3}
               navi={this.props.navigation}
             />
-            <PomCover output={output} />
+
+            <View style={styles.pomCover}>
+              <Image
+                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                style={styles.pom}
+              />
+              <Image
+                source={require("../../assets/progressbar/2_Level.png")}
+                style={styles.proGress}
+              />
+
+              <TouchableOpacity
+                style={styles.more}
+                // onPressOut={() =>
+                //   this.props.navigation.navigate({ routeName: "More" })
+                // }
+              >
+                <AntDesign name="plussquareo" style={styles.pluse} />
+                <Text>더보기</Text>
+              </TouchableOpacity>
+
+              <View style={styles.conCover}>
+                <Text>{output}</Text>
+              </View>
+            </View>
           </ImageBackground>
         ) : null}
 
@@ -93,7 +141,31 @@ class Main extends React.Component {
               depth3={depth3}
               navi={this.props.navigation}
             />
-            <PomCover output={output} />
+
+            <View style={styles.pomCover}>
+              <Image
+                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                style={styles.pom}
+              />
+              <Image
+                source={require("../../assets/progressbar/3_Level.png")}
+                style={styles.proGress}
+              />
+
+              <TouchableOpacity
+                style={styles.more}
+                // onPressOut={() =>
+                //   this.props.navigation.navigate({ routeName: "More" })
+                // }
+              >
+                <AntDesign name="plussquareo" style={styles.pluse} />
+                <Text>더보기</Text>
+              </TouchableOpacity>
+
+              <View style={styles.conCover}>
+                <Text>{output}</Text>
+              </View>
+            </View>
           </ImageBackground>
         ) : null}
 
@@ -109,7 +181,31 @@ class Main extends React.Component {
               depth3={depth3}
               navi={this.props.navigation}
             />
-            <PomCover output={output} />
+
+            <View style={styles.pomCover}>
+              <Image
+                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                style={styles.pom}
+              />
+              <Image
+                source={require("../../assets/progressbar/4_Level.png")}
+                style={styles.proGress}
+              />
+
+              <TouchableOpacity
+                style={styles.more}
+                // onPressOut={() =>
+                //   this.props.navigation.navigate({ routeName: "More" })
+                // }
+              >
+                <AntDesign name="plussquareo" style={styles.pluse} />
+                <Text>더보기</Text>
+              </TouchableOpacity>
+
+              <View style={styles.conCover}>
+                <Text>{output}</Text>
+              </View>
+            </View>
           </ImageBackground>
         ) : null}
 
@@ -125,7 +221,32 @@ class Main extends React.Component {
               depth3={depth3}
               navi={this.props.navigation}
             />
-            <PomCover output={output} />
+
+            <View style={styles.pomCover}>
+              <Image
+                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                style={styles.pom}
+              />
+
+              <Image
+                source={require("../../assets/progressbar/5_Level.png")}
+                style={styles.proGress}
+              />
+
+              <TouchableOpacity
+                style={styles.more}
+                // onPressOut={() =>
+                //   this.props.navigation.navigate({ routeName: "More" })
+                // }
+              >
+                <AntDesign name="plussquareo" style={styles.pluse} />
+                <Text>더보기</Text>
+              </TouchableOpacity>
+
+              <View style={styles.conCover}>
+                <Text>{output}</Text>
+              </View>
+            </View>
           </ImageBackground>
         ) : null}
 
@@ -141,7 +262,30 @@ class Main extends React.Component {
               depth3={depth3}
               navi={this.props.navigation}
             />
-            <PomCover output={output} />
+            <View style={styles.pomCover}>
+              <Image
+                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                style={styles.pom}
+              />
+              <Image
+                source={require("../../assets/progressbar/6_Level.png")}
+                style={styles.proGress}
+              />
+
+              <TouchableOpacity
+                style={styles.more}
+                // onPressOut={() =>
+                //   this.props.navigation.navigate({ routeName: "More" })
+                // }
+              >
+                <AntDesign name="plussquareo" style={styles.pluse} />
+                <Text>더보기</Text>
+              </TouchableOpacity>
+
+              <View style={styles.conCover}>
+                <Text>{this.props.output}</Text>
+              </View>
+            </View>
           </ImageBackground>
         ) : null}
 
@@ -157,7 +301,30 @@ class Main extends React.Component {
               depth3={depth3}
               navi={this.props.navigation}
             />
-            <PomCover output={output} />
+            <View style={styles.pomCover}>
+              <Image
+                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                style={styles.pom}
+              />
+              <Image
+                source={require("../../assets/progressbar/7_Level.png")}
+                style={styles.proGress}
+              />
+
+              <TouchableOpacity
+                style={styles.more}
+                // onPressOut={() =>
+                //   this.props.navigation.navigate({ routeName: "More" })
+                // }
+              >
+                <AntDesign name="plussquareo" style={styles.pluse} />
+                <Text>더보기</Text>
+              </TouchableOpacity>
+
+              <View style={styles.conCover}>
+                <Text>{output}</Text>
+              </View>
+            </View>
           </ImageBackground>
         ) : null}
       </View>

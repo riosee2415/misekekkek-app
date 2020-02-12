@@ -35,8 +35,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "flex-start",
-    paddingTop: 50
+    alignItems: "center"
   },
   gps: {
     flex: 1,
@@ -54,7 +53,6 @@ const styles = StyleSheet.create({
   locaText: {
     fontSize: 23
   },
-
   set: {
     fontSize: 25
   }

@@ -11,6 +11,10 @@
  * UPDATE DATE : 2020-01-29
  * UPDATOR : SONG SEONGMIN
  * UPDATE DESCRIPTION : Add ImageBackground
+ *
+ * UPDATE DATE : 2020-02-12
+ * UPDATOR : LEE DONGUK
+ * UPDATE DESCRIPTION : Add Progressbar
  */
 
 import React from "react";
@@ -393,7 +397,10 @@ const styles = StyleSheet.create({
     height: 250
   },
   proGress: {
-    paddingTop: 10
+    marginTop: 15,
+    marginBottom: 15,
+    width: 250,
+    height: 25
   },
   more: {
     paddingTop: 10,

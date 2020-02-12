@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     marginRight: 5
   },
   locaText: {
-    fontSize: 23
+    fontSize: 18
   },
   set: {
     fontSize: 25

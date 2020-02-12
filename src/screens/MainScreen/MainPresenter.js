@@ -368,25 +368,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     resizeMode: "cover"
   },
-  setCover: {
-    width: "90%",
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-    paddingTop: 50
-  },
-  loca: {
-    fontSize: 20,
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  locaText: {
-    fontSize: 15
-  },
-  set: {
-    fontSize: 25
-  },
   pomCover: {
     flex: 3,
     justifyContent: "center",

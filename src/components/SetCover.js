@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import { AntDesign, MaterialIcons } from "@expo/vector-icons";
+import { AntDesign, SimpleLineIcons } from "@expo/vector-icons";
 import { getLocation } from "../api/weather";
 
 class SetCover extends React.Component {
@@ -11,11 +11,13 @@ class SetCover extends React.Component {
   render() {
     return (
       <View style={styles.setCover}>
-        <MaterialIcons name="location-on" style={styles.loca}>
+        <View style={styles.gps}>
+          <SimpleLineIcons name="location-pin" style={styles.loca} />
+
           <Text style={styles.locaText}>
             {this.props.depth1} {this.props.depth2} {this.props.depth3}
           </Text>
-        </MaterialIcons>
+        </View>
 
         <TouchableOpacity
           onPressOut={() => this.props.navi.navigate({ routeName: "Settings" })}
@@ -33,16 +35,23 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "flex-start",
-    paddingTop: 50
-  },
-  loca: {
-    fontSize: 20,
-    justifyContent: "center",
     alignItems: "center"
   },
+  gps: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center"
+  },
+  loca: {
+    fontSize: 22,
+    fontWeight: "bold",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 5
+  },
   locaText: {
-    fontSize: 15
+    fontSize: 18
   },
   set: {
     fontSize: 25

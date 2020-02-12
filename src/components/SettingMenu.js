@@ -37,7 +37,15 @@ class SettingMenu extends React.Component {
           <Text>{this.props.set}</Text>
         )}
 
-        <Text>{this.props.val}</Text>
+        {this.props.agree ? (
+          <TouchableOpacity
+            onPressOut={() => this.props.navi.navigate({ routeName: "Agree" })}
+          >
+            <Text>{this.props.val}</Text>
+          </TouchableOpacity>
+        ) : (
+          <Text>{this.props.val}</Text>
+        )}
       </View>
     );
   }

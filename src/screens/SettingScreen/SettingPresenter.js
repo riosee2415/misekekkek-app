@@ -13,7 +13,6 @@ import styled from "styled-components";
 import { AsyncStorage } from "../../middleware/middleware";
 import SettingMenu from "../../components/SettingMenu";
 // import ToggleButton from "../../components/ToggleButton";
-import AlermPresenter from "../Alerm/AlermPresenter";
 import { AntDesign } from "@expo/vector-icons";
 import { publicColor } from "../../middleware/publicColor";
 
@@ -40,6 +39,7 @@ export default class App extends React.Component {
               (min === null ? "00" : min < 10 ? "0" + min : min)
             }
             alerm={true}
+            agree={false}
             navi={this.props.navigation}
           />
 
@@ -47,11 +47,15 @@ export default class App extends React.Component {
             set={"이용 정보 처리 방침"}
             val={<AntDesign name="right" style={{ fontSize: 15 }} />}
             alerm={false}
+            agree={true}
+            navi={this.props.navigation}
           />
           <SettingMenu
             set={"일반 설정"}
             val={<AntDesign name="right" style={{ fontSize: 15 }} />}
             alerm={false}
+            agree={false}
+            navi={this.props.navigation}
           />
         </Content>
       </View>

@@ -33,10 +33,6 @@ const params = {
   returnType: "json"
 };
 
-const fineDustAxios = axios.create({
-  baseURL: "http://openapi.airkorea.or.kr/openapi/services/rest/"
-});
-
 /**
  * FUNC NAME : getCurrentAddress
  * DESCRIPTION : get Current Address using Kakao REST API.
@@ -46,7 +42,6 @@ const fineDustAxios = axios.create({
  */
 const getCurrentAddress = async () => {
   const coords = await getLocation();
-
   let geo = null;
   let address = null;
   try {
@@ -71,22 +66,32 @@ const getCurrentAddress = async () => {
  * RETURN : Object (tmX, tmY)
  */
 const getTMStdrCrdntByAddr = async () => {
-  console.log("test start act - 6 ");
   const address = await getCurrentAddress();
-  console.log("test start act - 7 ", address);
-
-  const { data } = await fineDustAxios.get(
-    `MsrstnInfoInqireSvc/getTMStdrCrdnt?umdName=${address}&ServiceKey=gwgOFQcTz1OXVVg7nCx6B05%2B17ykz9X9GWRQfo8nwjWxuwfIY43OuBO%2ByxfWHWx1YqKAlHO0OZJVtd%2FxvDpTAg%3D%3D&_returnType=json`
+  const { data } = await axios.get(
+    `${params.baseURL}MsrstnInfoInqireSvc/getTMStdrCrdnt?umdName=${address}&ServiceKey=${params.api_key}&_returnType=${params.returnType}`
   );
-
-  console.log(data);
-
-  // const { data } = await axios.get(
-  //   `${params.baseURL}MsrstnInfoInqireSvc/getTMStdrCrdnt?umdName=${address}&ServiceKey=${params.api_key}&_returnType=${params.returnType}`
-  // );
-
-  console.log("test start act - last ");
-
+  /*
+  let { data } = await axios({
+    method: "get",
+    url: `${params.baseURL}MsrstnInfoInqireSvc/getTMStdrCrdnt?umdName=${address}&ServiceKey=${params.api_key}&_returnType=${params.returnType}`
+  })
+    .then(function(response) {
+      console.log("success");
+      data = response.data;
+    })
+    .catch(function(error) {
+      console.log("fail");
+      console.log(error);
+    })
+    .then(function() {
+      return data.list[0];
+    });
+  console.log(params.api_key);
+  console.log(
+    params.api_key ===
+      "gwgOFQcTz1OXVVg7nCx6B05%2B17ykz9X9GWRQfo8nwjWxuwfIY43OuBO%2ByxfWHWx1YqKAlHO0OZJVtd%2FxvDpTAg%3D%3D"
+  );
+  */
   return data.list[0];
 };
 
@@ -103,10 +108,9 @@ const getTMStdrCrdntByAddr = async () => {
  * RETURN : Array (근처 측정소 리스트)
  */
 const getNearbyMsrstnList = async () => {
-  console.log("test start act - 3 ");
   const tmStdr = await getTMStdrCrdntByAddr();
-  console.log("test start act - 5 ");
-  const { data } = await axios.get(
+  console.log(tmStdr);
+  const { data } = await axios.post(
     `${params.baseURL}MsrstnInfoInqireSvc/getNearbyMsrstnList?tmX=${tmStdr.tmX}&tmY=${tmStdr.tmY}&ServiceKey=${params.api_key}&_returnType=${params.returnType}`
   );
   return data.list;
@@ -129,9 +133,7 @@ export const fineDust = {
    * RETURN : Object (findDust data)
    */
   getNearbyFineDust: async (dataTerm = "daily") => {
-    console.log("test start act - 1 ");
     const msrstnList = await getNearbyMsrstnList();
-    console.log("test start act - 2 ");
     const { data } = await axios.get(
       `${params.baseURL}ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?stationName=${msrstnList[0].stationName}&dataTerm=${dataTerm}&ServiceKey=${params.api_key}&_returnType=${params.returnType}&ver=1.3`
     );

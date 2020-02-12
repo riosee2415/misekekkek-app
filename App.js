@@ -34,7 +34,7 @@ import { fineDust } from "./src/api/fineDust";
 
 class App extends React.Component {
   componentDidMount = async () => {
-    await fineDust.getNearbyFineDust();
+    console.log(await fineDust.getNearbyFineDust());
   };
   render() {
     console.log(`Current Platform :`, getPlatform());

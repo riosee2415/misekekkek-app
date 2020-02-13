@@ -68,7 +68,7 @@ class Main extends React.Component {
 
             <View style={styles.pomCover}>
               <Image
-                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                source={require("../../assets/pompom/1_LEVEL_POM.png")}
                 style={styles.pom}
               />
 
@@ -109,7 +109,7 @@ class Main extends React.Component {
 
             <View style={styles.pomCover}>
               <Image
-                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                source={require("../../assets/pompom/2_LEVEL_POM.png")}
                 style={styles.pom}
               />
               <Image
@@ -149,7 +149,7 @@ class Main extends React.Component {
 
             <View style={styles.pomCover}>
               <Image
-                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                source={require("../../assets/pompom/3_LEVEL_POM.png")}
                 style={styles.pom}
               />
               <Image
@@ -189,7 +189,7 @@ class Main extends React.Component {
 
             <View style={styles.pomCover}>
               <Image
-                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                source={require("../../assets/pompom/4_LEVEL_POM.png")}
                 style={styles.pom}
               />
               <Image
@@ -229,7 +229,7 @@ class Main extends React.Component {
 
             <View style={styles.pomCover}>
               <Image
-                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                source={require("../../assets/pompom/5_LEVEL_POM.png")}
                 style={styles.pom}
               />
 
@@ -269,7 +269,7 @@ class Main extends React.Component {
             />
             <View style={styles.pomCover}>
               <Image
-                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                source={require("../../assets/pompom/6_LEVEL_POM.png")}
                 style={styles.pom}
               />
               <Image
@@ -308,7 +308,7 @@ class Main extends React.Component {
             />
             <View style={styles.pomCover}>
               <Image
-                source={require("../../assets/pompom/7_Level_POMPOM_1000x1000.png")}
+                source={require("../../assets/pompom/7_LEVEL_POM.png")}
                 style={styles.pom}
               />
               <Image

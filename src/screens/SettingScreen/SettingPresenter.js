@@ -50,13 +50,13 @@ export default class App extends React.Component {
             agree={true}
             navi={this.props.navigation}
           />
-          <SettingMenu
+          {/* <SettingMenu
             set={"일반 설정"}
             val={<AntDesign name="right" style={{ fontSize: 15 }} />}
             alerm={false}
             agree={false}
             navi={this.props.navigation}
-          />
+          /> */}
         </Content>
       </View>
     );

@@ -34,7 +34,11 @@ class SettingMenu extends React.Component {
             <Text>{this.props.set}</Text>
           </TouchableOpacity>
         ) : (
-          <Text>{this.props.set}</Text>
+          <TouchableOpacity
+            onPressOut={() => this.props.navi.navigate({ routeName: "Agree" })}
+          >
+            <Text>{this.props.set}</Text>
+          </TouchableOpacity>
         )}
 
         {this.props.agree ? (
@@ -44,7 +48,11 @@ class SettingMenu extends React.Component {
             <Text>{this.props.val}</Text>
           </TouchableOpacity>
         ) : (
-          <Text>{this.props.val}</Text>
+          <TouchableOpacity
+            onPressOut={() => this.props.navi.navigate({ routeName: "Alerm" })}
+          >
+            <Text>{this.props.val}</Text>
+          </TouchableOpacity>
         )}
       </View>
     );

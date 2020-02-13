@@ -11,7 +11,7 @@ class AgreePresenter extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>미세켘켘 개인정보처리방침</Text>
+        <Text style={styles.title}>미세켁켁 개인정보처리방침</Text>
         <View style={styles.agreeContainer}>
           <Text style={styles.content}>개인정보처리방침</Text>
         </View>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     width: "94%",
     height: height,
     padding: 10,
-    backgroundColor: "#dcdde1"
+    backgroundColor: "#eaeaea"
   },
   content: {
     color: "#778ca3"

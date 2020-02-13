@@ -32,6 +32,7 @@ import { geoAddress } from "../../api/kakaoApi";
 import { getLocation } from "../../api/weather";
 import SetCover from "../../components/SetCover";
 import { Rank } from "../../middleware/middleware";
+import { mainText } from "../../firebase";
 
 class Main extends React.Component {
   constructor(props) {
@@ -87,7 +88,7 @@ class Main extends React.Component {
               </TouchableOpacity>
 
               <View style={styles.conCover}>
-                <Text>{output}</Text>
+                <Text>{mainText[1].val}</Text>
               </View>
             </View>
           </ImageBackground>
@@ -127,7 +128,7 @@ class Main extends React.Component {
               </TouchableOpacity>
 
               <View style={styles.conCover}>
-                <Text>{output}</Text>
+                <Text>{mainText[2].val}</Text>
               </View>
             </View>
           </ImageBackground>
@@ -167,7 +168,7 @@ class Main extends React.Component {
               </TouchableOpacity>
 
               <View style={styles.conCover}>
-                <Text>{output}</Text>
+                <Text>{mainText[3].val}</Text>
               </View>
             </View>
           </ImageBackground>
@@ -207,7 +208,7 @@ class Main extends React.Component {
               </TouchableOpacity>
 
               <View style={styles.conCover}>
-                <Text>{output}</Text>
+                <Text>{mainText[4].val}</Text>
               </View>
             </View>
           </ImageBackground>
@@ -248,7 +249,7 @@ class Main extends React.Component {
               </TouchableOpacity>
 
               <View style={styles.conCover}>
-                <Text>{output}</Text>
+                <Text>{mainText[5].val}</Text>
               </View>
             </View>
           </ImageBackground>
@@ -287,7 +288,7 @@ class Main extends React.Component {
               </TouchableOpacity>
 
               <View style={styles.conCover}>
-                <Text>{this.props.output}</Text>
+                <Text>{mainText[6].val}</Text>
               </View>
             </View>
           </ImageBackground>
@@ -326,7 +327,7 @@ class Main extends React.Component {
               </TouchableOpacity>
 
               <View style={styles.conCover}>
-                <Text>{output}</Text>
+                <Text>{mainText[7].val}</Text>
               </View>
             </View>
           </ImageBackground>

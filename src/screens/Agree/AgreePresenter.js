@@ -4,6 +4,7 @@
 
 import React, { Component } from "react";
 import { Text, View, StyleSheet, Dimensions } from "react-native";
+import { publicColor } from "../../middleware/publicColor";
 
 const { width, height } = Dimensions.get("window");
 
@@ -23,10 +24,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#ffffff"
+    backgroundColor: publicColor.bgWhite
   },
   title: {
-    color: "#555",
+    color: publicColor.gray,
     fontSize: 20,
     margin: 20
   },
@@ -35,10 +36,10 @@ const styles = StyleSheet.create({
     width: "94%",
     height: height,
     padding: 10,
-    backgroundColor: "#eaeaea"
+    backgroundColor: publicColor.agreeContainer
   },
   content: {
-    color: "#778ca3"
+    color: publicColor.agreeContent
   }
 });
 

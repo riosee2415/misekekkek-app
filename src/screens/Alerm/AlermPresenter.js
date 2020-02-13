@@ -7,7 +7,7 @@ import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
 import TimePicker from "react-native-simple-time-picker";
 import { AsyncStorage } from "../../middleware/middleware";
 import { LinearGradient } from "expo-linear-gradient";
-import publicColor from "../../middleware/publicColor";
+import { publicColor } from "../../middleware/publicColor";
 
 class AlermPresenter extends Component {
   constructor(props) {
@@ -65,27 +65,27 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#fffdcd"
+    backgroundColor: publicColor.alermContainer
   },
   modal: {
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
-    backgroundColor: "#f7021a"
+    backgroundColor: publicColor.modal
   },
   text: {
     marginTop: 40,
     marginBottom: 50,
-    color: "#666666"
+    color: publicColor.gray
   },
   saveBtn: {
     padding: 10,
-    backgroundColor: "#fffdf2",
+    backgroundColor: publicColor.savaBtn,
     width: 100,
     height: 40,
     borderRadius: 10,
     alignItems: "center",
-    shadowColor: "#efdf8f",
+    shadowColor: publicColor.saveBtnShdow,
     shadowOffset: {
       width: 6,
       height: 6
@@ -96,17 +96,17 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   saveText: {
-    color: "#0b0b0b"
+    color: publicColor.bgBlack
   },
   savecontainer: {
     marginTop: 50,
     padding: 10,
-    backgroundColor: "#0d0d0d",
+    backgroundColor: publicColor.bgBlack,
     width: 100,
     height: 40,
-    borderRadius: 20,
+    borderRadius: 10,
     alignItems: "center",
-    shadowColor: "#ffffff",
+    shadowColor: publicColor.bgWhite,
     shadowOffset: {
       width: -6,
       height: -6

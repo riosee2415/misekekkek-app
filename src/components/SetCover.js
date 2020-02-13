@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   loca: {
-    fontSize: 22,
+    fontSize: 26,
     fontWeight: "bold",
     justifyContent: "center",
     alignItems: "center",
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   set: {
-    fontSize: 25
+    fontSize: 30
   }
 });
 

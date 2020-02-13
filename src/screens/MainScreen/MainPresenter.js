@@ -381,8 +381,8 @@ const styles = StyleSheet.create({
   proGress: {
     marginTop: 35,
     marginBottom: 15,
-    width: 250,
-    height: 25
+    width: 300,
+    height: 30
   },
   more: {
     paddingTop: 10,

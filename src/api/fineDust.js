@@ -22,7 +22,6 @@
  */
 
 import axios from "axios";
-import { F_API_KEY } from "react-native-dotenv";
 import { geoAddress } from "./kakaoApi";
 import { getLocation } from "./weather";
 
@@ -32,6 +31,10 @@ const params = {
     "gwgOFQcTz1OXVVg7nCx6B05%2B17ykz9X9GWRQfo8nwjWxuwfIY43OuBO%2ByxfWHWx1YqKAlHO0OZJVtd%2FxvDpTAg%3D%3D",
   returnType: "json"
 };
+
+const fineRestApi = axios.create({
+  baseURL: "http://openapi.airkorea.or.kr/openapi/services/rest/"
+});
 
 /**
  * FUNC NAME : getCurrentAddress
@@ -108,11 +111,12 @@ const getTMStdrCrdntByAddr = async () => {
  * RETURN : Array (근처 측정소 리스트)
  */
 const getNearbyMsrstnList = async () => {
-  const tmStdr = await getTMStdrCrdntByAddr();
-  console.log(tmStdr);
+  //const tmStdr = await getTmsAddr();
+
   const { data } = await axios.post(
-    `${params.baseURL}MsrstnInfoInqireSvc/getNearbyMsrstnList?tmX=${tmStdr.tmX}&tmY=${tmStdr.tmY}&ServiceKey=${params.api_key}&_returnType=${params.returnType}`
+    `${params.baseURL}MsrstnInfoInqireSvc/getNearbyMsrstnList?tmX=234640.487848&tmY=317347.979649&ServiceKey=${params.api_key}&_returnType=${params.returnType}`
   );
+
   return data.list;
 };
 
@@ -134,9 +138,15 @@ export const fineDust = {
    */
   getNearbyFineDust: async (dataTerm = "daily") => {
     const msrstnList = await getNearbyMsrstnList();
+
+    console.log(msrstnList[0].stationName);
+    console.log(params.api_key);
+
     const { data } = await axios.get(
       `${params.baseURL}ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?stationName=${msrstnList[0].stationName}&dataTerm=${dataTerm}&ServiceKey=${params.api_key}&_returnType=${params.returnType}&ver=1.3`
     );
+
+    console.log(data);
     return data.list;
   }
 };

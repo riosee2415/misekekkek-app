@@ -18,7 +18,10 @@ import { createAppContainer } from "react-navigation";
 const MainNavigation = createStackNavigator(
   {
     Tabs: { screen: Main, navigationOptions: { headerShown: false } },
-    Settings: { screen: Setting },
+    Settings: {
+      screen: Setting,
+      navigationOptions: { headerTitle: false }
+    },
     Alerm: { screen: Alerm },
     Agree: { screen: Agree }
   },

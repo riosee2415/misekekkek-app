@@ -49,7 +49,7 @@ class AlermPresenter extends Component {
         <View style={styles.savecontainer}>
           <TouchableOpacity
             style={styles.saveBtn}
-            onPress={() => this._handleTime()}
+            onPressOut={() => this._handleTime()}
           >
             <Text style={styles.saveText}> 저장 </Text>
           </TouchableOpacity>

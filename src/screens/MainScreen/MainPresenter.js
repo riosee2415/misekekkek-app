@@ -72,19 +72,17 @@ class Main extends React.Component {
                 style={styles.pom}
               />
 
-              <Image
-                source={require("../../assets/progressbar/1_Level.png")}
-                style={styles.proGress}
-              />
-
               <TouchableOpacity
                 style={styles.more}
                 // onPressOut={() =>
                 //   this.props.navigation.navigate({ routeName: "More" })
                 // }
               >
-                <AntDesign name="plussquareo" style={styles.pluse} />
-                <Text>더보기</Text>
+                <Image
+                  source={require("../../assets/progressbar/1_Level.png")}
+                  style={styles.proGress}
+                />
+                <Text>1등급 - 수치값</Text>
               </TouchableOpacity>
 
               <View style={styles.conCover}>
@@ -112,10 +110,6 @@ class Main extends React.Component {
                 source={require("../../assets/pompom/2_LEVEL_POM.png")}
                 style={styles.pom}
               />
-              <Image
-                source={require("../../assets/progressbar/2_Level.png")}
-                style={styles.proGress}
-              />
 
               <TouchableOpacity
                 style={styles.more}
@@ -123,8 +117,11 @@ class Main extends React.Component {
                 //   this.props.navigation.navigate({ routeName: "More" })
                 // }
               >
-                <AntDesign name="plussquareo" style={styles.pluse} />
-                <Text>더보기</Text>
+                <Image
+                  source={require("../../assets/progressbar/2_Level.png")}
+                  style={styles.proGress}
+                />
+                <Text>2등급 - 수치값</Text>
               </TouchableOpacity>
 
               <View style={styles.conCover}>
@@ -152,10 +149,6 @@ class Main extends React.Component {
                 source={require("../../assets/pompom/3_LEVEL_POM.png")}
                 style={styles.pom}
               />
-              <Image
-                source={require("../../assets/progressbar/3_Level.png")}
-                style={styles.proGress}
-              />
 
               <TouchableOpacity
                 style={styles.more}
@@ -163,8 +156,11 @@ class Main extends React.Component {
                 //   this.props.navigation.navigate({ routeName: "More" })
                 // }
               >
-                <AntDesign name="plussquareo" style={styles.pluse} />
-                <Text>더보기</Text>
+                <Image
+                  source={require("../../assets/progressbar/3_Level.png")}
+                  style={styles.proGress}
+                />
+                <Text>3등급 - 수치값</Text>
               </TouchableOpacity>
 
               <View style={styles.conCover}>
@@ -192,10 +188,6 @@ class Main extends React.Component {
                 source={require("../../assets/pompom/4_LEVEL_POM.png")}
                 style={styles.pom}
               />
-              <Image
-                source={require("../../assets/progressbar/4_Level.png")}
-                style={styles.proGress}
-              />
 
               <TouchableOpacity
                 style={styles.more}
@@ -203,8 +195,11 @@ class Main extends React.Component {
                 //   this.props.navigation.navigate({ routeName: "More" })
                 // }
               >
-                <AntDesign name="plussquareo" style={styles.pluse} />
-                <Text>더보기</Text>
+                <Image
+                  source={require("../../assets/progressbar/4_Level.png")}
+                  style={styles.proGress}
+                />
+                <Text>4등급 - 수치값</Text>
               </TouchableOpacity>
 
               <View style={styles.conCover}>
@@ -233,19 +228,17 @@ class Main extends React.Component {
                 style={styles.pom}
               />
 
-              <Image
-                source={require("../../assets/progressbar/5_Level.png")}
-                style={styles.proGress}
-              />
-
               <TouchableOpacity
                 style={styles.more}
                 // onPressOut={() =>
                 //   this.props.navigation.navigate({ routeName: "More" })
                 // }
               >
-                <AntDesign name="plussquareo" style={styles.pluse} />
-                <Text>더보기</Text>
+                <Image
+                  source={require("../../assets/progressbar/5_Level.png")}
+                  style={styles.proGress}
+                />
+                <Text>5등급 - 수치값</Text>
               </TouchableOpacity>
 
               <View style={styles.conCover}>
@@ -272,10 +265,6 @@ class Main extends React.Component {
                 source={require("../../assets/pompom/6_LEVEL_POM.png")}
                 style={styles.pom}
               />
-              <Image
-                source={require("../../assets/progressbar/6_Level.png")}
-                style={styles.proGress}
-              />
 
               <TouchableOpacity
                 style={styles.more}
@@ -283,8 +272,11 @@ class Main extends React.Component {
                 //   this.props.navigation.navigate({ routeName: "More" })
                 // }
               >
-                <AntDesign name="plussquareo" style={styles.pluse} />
-                <Text>더보기</Text>
+                <Image
+                  source={require("../../assets/progressbar/6_Level.png")}
+                  style={styles.proGress}
+                />
+                <Text>6등급 - 수치값</Text>
               </TouchableOpacity>
 
               <View style={styles.conCover}>
@@ -311,10 +303,6 @@ class Main extends React.Component {
                 source={require("../../assets/pompom/7_LEVEL_POM.png")}
                 style={styles.pom}
               />
-              <Image
-                source={require("../../assets/progressbar/7_Level.png")}
-                style={styles.proGress}
-              />
 
               <TouchableOpacity
                 style={styles.more}
@@ -322,8 +310,11 @@ class Main extends React.Component {
                 //   this.props.navigation.navigate({ routeName: "More" })
                 // }
               >
-                <AntDesign name="plussquareo" style={styles.pluse} />
-                <Text>더보기</Text>
+                <Image
+                  source={require("../../assets/progressbar/7_Level.png")}
+                  style={styles.proGress}
+                />
+                <Text>7등급 - 수치값</Text>
               </TouchableOpacity>
 
               <View style={styles.conCover}>
@@ -386,14 +377,14 @@ const styles = StyleSheet.create({
   },
   more: {
     paddingTop: 10,
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center"
   },
-  pluse: {
-    fontSize: 12,
-    marginRight: 5
-  },
+  // pluse: {
+  //   fontSize: 12,
+  //   marginBottom: 10
+  // },
   conCover: {
     flex: 1,
     justifyContent: "center",

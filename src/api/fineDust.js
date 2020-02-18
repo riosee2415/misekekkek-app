@@ -33,7 +33,7 @@ const params = {
 };
 
 const fineRestApi = axios.create({
-  baseURL: "http://openapi.airkorea.or.kr/openapi/services/rest/"
+  baseURL: "openapi.airkorea.or.kr/openapi/services/rest/"
 });
 
 /**
@@ -138,15 +138,16 @@ export const fineDust = {
    */
   getNearbyFineDust: async (dataTerm = "daily") => {
     const msrstnList = await getNearbyMsrstnList();
-
-    console.log(msrstnList[0].stationName);
-    console.log(params.api_key);
-
-    const { data } = await axios.get(
-      `${params.baseURL}ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?stationName=${msrstnList[0].stationName}&dataTerm=${dataTerm}&ServiceKey=${params.api_key}&_returnType=${params.returnType}&ver=1.3`
-    );
-
-    console.log(data);
-    return data.list;
+    let resData;
+    try {
+      resData = await axios.get(
+        `${params.baseURL}ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?stationName=${msrstnList[0].stationName}&dataTerm=${dataTerm}&ServiceKey=${params.api_key}&_returnType=${params.returnType}&ver=1.3`
+      );
+    } catch (error) {
+      console.log(error);
+    }
+    console.log(resData);
+    console.log(resData.data);
+    return resData.data.list;
   }
 };

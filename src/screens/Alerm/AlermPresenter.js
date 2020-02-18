@@ -8,6 +8,7 @@ import TimePicker from "react-native-simple-time-picker";
 import { AsyncStorage } from "../../middleware/middleware";
 import { LinearGradient } from "expo-linear-gradient";
 import { publicColor } from "../../middleware/publicColor";
+import { NavigationAction } from "react-navigation";
 
 class AlermPresenter extends Component {
   constructor(props) {
@@ -27,6 +28,8 @@ class AlermPresenter extends Component {
 
     await AsyncStorage.setItem("hour", JSON.stringify(selectedHours));
     await AsyncStorage.setItem("min", JSON.stringify(selectedMinutes));
+
+    this.props.navigation.navigate("Settings");
   };
 
   render() {

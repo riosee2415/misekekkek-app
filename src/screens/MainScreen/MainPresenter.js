@@ -367,16 +367,15 @@ const styles = StyleSheet.create({
   },
   pom: {
     width: 230,
-    height: 230
+    height: 230,
+    marginBottom: 30
   },
   proGress: {
-    marginTop: 35,
     marginBottom: 15,
     width: 300,
     height: 30
   },
   more: {
-    paddingTop: 10,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center"
